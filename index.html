@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>寻人网 | 专业的人员查找服务平台</title>
+  <meta name="description" content="寻人网提供专业的人员查找服务，帮助您找到失联的亲友、同学、同事。我们提供安全、合法、高效的寻人解决方案。">
+  <meta name="keywords" content="寻人,找人,人员查找,失联,寻亲,同学录,老友重聚">
+  <link rel="canonical" href="https://www.findpeople.com/">
+  <link rel="alternate" hreflang="zh-CN" href="https://www.findpeople.com/">
+  <link rel="alternate" hreflang="x-default" href="https://www.findpeople.com/">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/partials/site-style.css">
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --primary: #3b82f6;
+      --text: #0f172a;
+      --muted: #6b7280;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: #fff;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,.05);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo a { 
+      font-size: 1.5rem; 
+      color: var(--primary); 
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav ul { list-style: none; display: flex; gap: 1rem; }
+    nav a { text-decoration: none; color: var(--text); font-weight: 600; }
+    nav a:hover { color: var(--primary); }
+
+    .language-switcher {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .language-switcher a {
+      padding: 0.25rem 0.5rem;
+      text-decoration: none;
+      color: var(--muted);
+      border-radius: 0.25rem;
+    }
+    .language-switcher a.active {
+      background: var(--primary);
+      color: white;
+    }
+
+    .hero {
+      padding: 4rem 1rem;
+      text-align: center;
+      background: linear-gradient(135deg, var(--primary), #60a5fa);
+      color: #fff;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      opacity: 0.95;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .search-form {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .search-form input,
+    .search-form button {
+      font-size: 1rem;
+    }
+    .search-form input {
+      padding: .8rem 1rem;
+      border-radius: .375rem;
+      border: none;
+      min-width: 300px;
+    }
+    .search-form button {
+      padding: .8rem 1.5rem;
+      border: none;
+      border-radius: .375rem;
+      background: #fff;
+      color: var(--primary);
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .search-form button:hover { background: #f1f5f9; }
+
+    .section { max-width: 960px; margin: 3rem auto; padding: 0 1.5rem; }
+    .card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: .75rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+      margin-bottom: 1.5rem;
+      transition: transform .2s ease;
+    }
+    .card:hover { transform: translateY(-4px); }
+    .card h3 { font-size: 1.25rem; margin-bottom: .5rem; color: var(--primary); }
+    .card a { text-decoration: none; color: var(--primary); }
+    .card a:hover { opacity: .8; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .stat-card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: .75rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      background: #fff;
+      margin-top: 3rem;
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--primary); }
+
+    .nav-toggle { display: none; }
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      .desktop { display: none; }
+      .hero h1 { font-size: 2rem; }
+      .search-form input { min-width: 250px; }
+    }
+  </style>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8231924120348302" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="/">寻人网</a></div>
+    <div class="language-switcher">
+      <a href="/" class="active" title="中文">中文</a>
+      <a href="/index-en.html" title="English">EN</a>
+    </div>
+    <details class="nav-toggle">
+      <summary>☰</summary>
+      <nav>
+        <a href="/">首页</a>
+        <a href="/#services">服务</a>
+        <a href="/search.html">寻人</a>
+        <a href="/success-stories.html">成功案例</a>
+        <a href="/#about">关于我们</a>
+      </nav>
+    </details>
+    <nav class="desktop">
+      <a href="/">首页</a>
+      <a href="/#services">服务</a>
+      <a href="/search.html">寻人</a>
+      <a href="/success-stories.html">成功案例</a>
+      <a href="/#about">关于我们</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>专业寻人服务，帮您找到失联的重要人员</h1>
+    <p>我们提供安全、合法、高效的人员查找服务，帮助您重新联系失联的亲友、同学、同事</p>
+    <p style="margin-top:1rem;">已成功帮助超过5,000个家庭重新团聚</p>
+    <form class="search-form" action="/search.html" method="GET">
+      <input type="text" name="name" placeholder="请输入要寻找的人员姓名" required>
+      <button type="submit">开始寻人</button>
+    </form>
+  </section>
+
+  <main class="section">
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-number">5,000+</div>
+        <div>成功案例</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">98%</div>
+        <div>成功率</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">24小时</div>
+        <div>快速响应</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100%</div>
+        <div>隐私保护</div>
+      </div>
+    </div>
+
+    <!-- AdSense 广告位 -->
+    <div style="text-align: center; margin: 2rem 0;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-8231924120348302"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
+    <section id="services">
+      <h2 style="text-align: center; margin-bottom: 2rem; color: var(--text);">我们的服务</h2>
+      
+      <div class="card">
+        <h3>失联亲友寻找</h3>
+        <p>专业团队帮助您寻找失联多年的亲人，包括父母、子女、兄弟姐妹等血缘关系人员。我们使用合法渠道和专业方法，保护隐私的同时高效寻人。</p>
+      </div>
+
+      <div class="card">
+        <h3>同学老友重聚</h3>
+        <p>帮助您找到失联的同学、朋友，重新建立联系，组织同学聚会或老友重聚。让美好的友谊重新绽放，重温青春岁月。</p>
+      </div>
+      
+      <div class="card">
+        <h3>商务人员查找</h3>
+        <p>协助企业寻找前同事、合作伙伴或重要客户，为商务合作提供支持。专业、保密、高效，助力商业发展。</p>
+      </div>
+      
+      <div class="card">
+        <h3>法律相关寻人</h3>
+        <p>为律师事务所、法院等机构提供合法的人员查找服务，协助法律程序进行。严格遵守法律法规，确保程序合规。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="about">
+    <h3>关于寻人网</h3>
+    <p>寻人网成立于2020年，是一家专业的人员查找服务机构。我们拥有经验丰富的专业团队，</p>
+    <p>致力于为客户提供安全、合法、高效的寻人服务。</p>
+    <br>
+    <p>© 2025 寻人网 · <a href="/privacy.html">隐私政策</a> · <a href="/terms.html">使用条款</a> · <a href="/sitemap.xml">网站地图</a></p>
+  </footer>
+
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
+  <link rel="stylesheet" href="https://unpkg.com/cookieconsent@3/build/cookieconsent.min.css">
+  <script defer src="https://unpkg.com/cookieconsent@3/build/cookieconsent.min.js"></script>
+  <script defer>
+    window.addEventListener('load', () => {
+      window.cookieconsent.initialise({
+        theme: 'classic',
+        position: 'bottom',
+        type: 'opt-in',
+        palette: {
+          button: { background: '#3b82f6' }
+        },
+        content: {
+          message: '我们使用Cookie来改善您的体验。',
+          dismiss: '接受',
+          deny: '拒绝',
+          link: '隐私政策',
+          href: '/privacy.html'
+        }
+      });
+    });
+  </script>
+</body>
+</html>
