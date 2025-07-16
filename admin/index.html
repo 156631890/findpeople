@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>寻人网管理后台</title>
+  <link rel="stylesheet" href="../partials/site-style.css">
+  <style>
+    .admin-layout {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      min-height: 100vh;
+    }
+    
+    .sidebar {
+      background: #1e293b;
+      color: white;
+      padding: 1rem;
+    }
+    
+    .sidebar-nav {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .sidebar-nav li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .sidebar-nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      padding: 0.75rem 1rem;
+      display: block;
+      border-radius: 0.5rem;
+      transition: all 0.2s;
+    }
+    
+    .sidebar-nav a:hover,
+    .sidebar-nav a.active {
+      background: #3b82f6;
+      color: white;
+    }
+    
+    .main-content {
+      padding: 2rem;
+      background: #f8fafc;
+    }
+    
+    .dashboard-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .dashboard-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    }
+    
+    .dashboard-card h3 {
+      color: #374151;
+      margin-bottom: 0.5rem;
+    }
+    
+    .dashboard-number {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #3b82f6;
+    }
+    
+    .process-flow {
+      background: white;
+      padding: 2rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+      margin-bottom: 2rem;
+    }
+    
+    .flow-steps {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    
+    .flow-step {
+      text-align: center;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      background: #f8fafc;
+      border: 2px solid #e5e7eb;
+      min-width: 120px;
+      position: relative;
+    }
+    
+    .flow-step.active {
+      border-color: #3b82f6;
+      background: #eff6ff;
+    }
+    
+    .flow-step.completed {
+      border-color: #10b981;
+      background: #f0fdf4;
+    }
+    
+    .flow-step::after {
+      content: '→';
+      position: absolute;
+      right: -15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #6b7280;
+      font-size: 1.2rem;
+    }
+    
+    .flow-step:last-child::after {
+      display: none;
+    }
+    
+    .case-table {
+      background: white;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    }
+    
+    .case-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .case-table th,
+    .case-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .case-table th {
+      background: #f8fafc;
+      font-weight: 600;
+      color: #374151;
+    }
+    
+    .status-badge {
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    
+    .status-pending { background: #fef3c7; color: #92400e; }
+    .status-legal { background: #dbeafe; color: #1e40af; }
+    .status-quoted { background: #e0e7ff; color: #3730a3; }
+    .status-executing { background: #fef2f2; color: #991b1b; }
+    .status-completed { background: #d1fae5; color: #065f46; }
+    
+    @media (max-width: 768px) {
+      .admin-layout {
+        grid-template-columns: 1fr;
+      }
+      
+      .sidebar {
+        order: 2;
+      }
+      
+      .flow-steps {
+        flex-direction: column;
+      }
+      
+      .flow-step::after {
+        content: '↓';
+        right: 50%;
+        top: 100%;
+        transform: translateX(50%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="sidebar">
+      <h2 style="margin-bottom: 2rem;">寻人网管理</h2>
+      <ul class="sidebar-nav">
+        <li><a href="#dashboard" class="active">仪表盘</a></li>
+        <li><a href="#cases">案例管理</a></li>
+        <li><a href="#legal">法务筛查</a></li>
+        <li><a href="#quotes">报价管理</a></li>
+        <li><a href="#execution">执行跟踪</a></li>
+        <li><a href="#reports">结果报告</a></li>
+        <li><a href="#finance">财务管理</a></li>
+        <li><a href="#crm">CRM系统</a></li>
+        <li><a href="#analytics">数据分析</a></li>
+        <li><a href="#settings">系统设置</a></li>
+      </ul>
+    </aside>
+    
+    <main class="main-content">
+      <div id="dashboard">
+        <h1>业务仪表盘</h1>
+        
+        <div class="dashboard-cards">
+          <div class="dashboard-card">
+            <h3>待处理申请</h3>
+            <div class="dashboard-number">23</div>
+            <p class="text-muted">新提交的寻人申请</p>
+          </div>
+          
+          <div class="dashboard-card">
+            <h3>法务审核中</h3>
+            <div class="dashboard-number">8</div>
+            <p class="text-muted">等待法务部门审核</p>
+          </div>
+          
+          <div class="dashboard-card">
+            <h3>执行中案例</h3>
+            <div class="dashboard-number">15</div>
+            <p class="text-muted">正在执行的寻人案例</p>
+          </div>
+          
+          <div class="dashboard-card">
+            <h3>本月完成</h3>
+            <div class="dashboard-number">42</div>
+            <p class="text-muted">本月成功完成案例</p>
+          </div>
+          
+          <div class="dashboard-card">
+            <h3>成功率</h3>
+            <div class="dashboard-number">96%</div>
+            <p class="text-muted">整体案例成功率</p>
+          </div>
+          
+          <div class="dashboard-card">
+            <h3>本月收入</h3>
+            <div class="dashboard-number">¥128K</div>
+            <p class="text-muted">本月总收入</p>
+          </div>
+        </div>
+        
+        <div class="process-flow">
+          <h2>业务流程监控</h2>
+          <div class="flow-steps">
+            <div class="flow-step completed">
+              <div><strong>用户表单</strong></div>
+              <div>线索收集</div>
+              <small>23个新申请</small>
+            </div>
+            
+            <div class="flow-step active">
+              <div><strong>CRM/数据库</strong></div>
+              <div>信息录入</div>
+              <small>8个待处理</small>
+            </div>
+            
+            <div class="flow-step">
+              <div><strong>法务筛查</strong></div>
+              <div>合规审核</div>
+              <small>5个审核中</small>
+            </div>
+            
+            <div class="flow-step">
+              <div><strong>报价&合同</strong></div>
+              <div>商务洽谈</div>
+              <small>3个报价中</small>
+            </div>
+            
+            <div class="flow-step">
+              <div><strong>执行阶段</strong></div>
+              <div>数据&线下</div>
+              <small>15个执行中</small>
+            </div>
+            
+            <div class="flow-step">
+              <div><strong>结果报告</strong></div>
+              <div>交付成果</div>
+              <small>2个待交付</small>
+            </div>
+            
+            <div class="flow-step">
+              <div><strong>财务结算</strong></div>
+              <div>尾款收取</div>
+              <small>1个待收款</small>
+            </div>
+            
+            <div class="flow-step">
+              <div><strong>案例库</strong></div>
+              <div>经验积累</div>
+              <small>42个已归档</small>
+            </div>
+          </div>
+        </div>
+        
+        <div class="case-table">
+          <h2 style="padding: 1.5rem 1.5rem 0;">最新案例</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>案例编号</th>
+                <th>客户姓名</th>
+                <th>目标人员</th>
+                <th>当前状态</th>
+                <th>负责人</th>
+                <th>创建时间</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#FP2025001</td>
+                <td>张女士</td>
+                <td>张明华</td>
+                <td><span class="status-badge status-legal">法务审核</span></td>
+                <td>李律师</td>
+                <td>2025-01-16</td>
+                <td><a href="#" class="text-primary">查看详情</a></td>
+              </tr>
+              <tr>
+                <td>#FP2025002</td>
+                <td>王先生</td>
+                <td>王小红</td>
+                <td><span class="status-badge status-executing">执行中</span></td>
+                <td>陈调查员</td>
+                <td>2025-01-15</td>
+                <td><a href="#" class="text-primary">查看详情</a></td>
+              </tr>
+              <tr>
+                <td>#FP2025003</td>
+                <td>刘女士</td>
+                <td>刘大伟</td>
+                <td><span class="status-badge status-completed">已完成</span></td>
+                <td>赵调查员</td>
+                <td>2025-01-14</td>
+                <td><a href="#" class="text-primary">查看详情</a></td>
+              </tr>
+              <tr>
+                <td>#FP2025004</td>
+                <td>陈先生</td>
+                <td>陈晓明</td>
+                <td><span class="status-badge status-quoted">已报价</span></td>
+                <td>销售部</td>
+                <td>2025-01-13</td>
+                <td><a href="#" class="text-primary">查看详情</a></td>
+              </tr>
+              <tr>
+                <td>#FP2025005</td>
+                <td>黄女士</td>
+                <td>黄志强</td>
+                <td><span class="status-badge status-pending">待处理</span></td>
+                <td>-</td>
+                <td>2025-01-16</td>
+                <td><a href="#" class="text-primary">查看详情</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script>
+    // 简单的导航功能
+    document.querySelectorAll('.sidebar-nav a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // 移除所有active类
+        document.querySelectorAll('.sidebar-nav a').forEach(l => l.classList.remove('active'));
+        
+        // 添加active类到当前链接
+        link.classList.add('active');
+        
+        // 这里可以添加页面切换逻辑
+        console.log('切换到:', link.textContent);
+      });
+    });
+    
+    // 模拟实时数据更新
+    setInterval(() => {
+      const numbers = document.querySelectorAll('.dashboard-number');
+      numbers.forEach(num => {
+        if (Math.random() > 0.9) { // 10%概率更新
+          const current = parseInt(num.textContent.replace(/[^\d]/g, ''));
+          const change = Math.random() > 0.5 ? 1 : -1;
+          const newValue = Math.max(0, current + change);
+          
+          if (num.textContent.includes('%')) {
+            num.textContent = newValue + '%';
+          } else if (num.textContent.includes('¥')) {
+            num.textContent = '¥' + newValue + 'K';
+          } else {
+            num.textContent = newValue;
+          }
+        }
+      });
+    }, 5000);
+  </script>
+</body>
+</html>

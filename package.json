@@ -1,0 +1,50 @@
+{
+  "name": "findpeople-website",
+  "version": "1.0.0",
+  "description": "专业的人员查找服务平台 - Professional People Search Services",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx live-server --port=3000",
+    "build": "echo 'Static site - no build needed'",
+    "test": "echo 'No tests specified'",
+    "deploy:netlify": "netlify deploy --prod --dir=.",
+    "deploy:vercel": "vercel --prod"
+  },
+  "keywords": [
+    "findpeople",
+    "people-search",
+    "missing-persons",
+    "family-reunion",
+    "classmate-search",
+    "寻人",
+    "找人",
+    "人员查找"
+  ],
+  "author": {
+    "name": "FindPeople Team",
+    "email": "contact@findpeople.com",
+    "url": "https://www.findpeople.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/findpeople-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/findpeople-website/issues"
+  },
+  "homepage": "https://www.findpeople.com",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "serve": "^14.2.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>案例详情 - 寻人网管理后台</title>
+  <link rel="stylesheet" href="../partials/site-style.css">
+  <style>
+    .case-header {
+      background: white;
+      padding: 2rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    
+    .case-info {
+      flex: 1;
+    }
+    
+    .case-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .timeline {
+      background: white;
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .timeline-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 40px;
+      bottom: -20px;
+      width: 2px;
+      background: #e5e7eb;
+    }
+    
+    .timeline-item:last-child::before {
+      display: none;
+    }
+    
+    .timeline-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #3b82f6;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+      z-index: 1;
+      position: relative;
+    }
+    
+    .timeline-content {
+      flex: 1;
+      padding-top: 0.5rem;
+    }
+    
+    .timeline-title {
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 0.25rem;
+    }
+    
+    .timeline-meta {
+      color: #6b7280;
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .timeline-notes {
+      color: #4b5563;
+    }
+    
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .info-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    }
+    
+    .info-card h3 {
+      color: #374151;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e5e7eb;
+    }
+    
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    
+    .info-row:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    
+    .info-label {
+      font-weight: 500;
+      color: #6b7280;
+    }
+    
+    .info-value {
+      color: #374151;
+      text-align: right;
+    }
+    
+    .documents-section {
+      background: white;
+      padding: 2rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+      margin-bottom: 2rem;
+    }
+    
+    .document-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .document-icon {
+      width: 40px;
+      height: 40px;
+      background: #eff6ff;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #3b82f6;
+    }
+    
+    .document-info {
+      flex: 1;
+    }
+    
+    .document-name {
+      font-weight: 500;
+      color: #374151;
+    }
+    
+    .document-meta {
+      color: #6b7280;
+      font-size: 0.875rem;
+    }
+    
+    .action-buttons {
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+    
+    .modal-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 2rem;
+      border-radius: 0.75rem;
+      max-width: 500px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #6b7280;
+    }
+    
+    @media (max-width: 768px) {
+      .case-header {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .timeline-item {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .timeline-item::before {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" style="max-width: 1200px; margin: 2rem auto; padding: 0 1rem;">
+    <div class="case-header">
+      <div class="case-info">
+        <h1>案例 #FP2025001</h1>
+        <p class="text-muted">创建时间: 2025-01-16 14:30 | 最后更新: 2025-01-16 16:45</p>
+        <div style="margin-top: 0.5rem;">
+          <span class="status-badge status-legal">法务审核中</span>
+        </div>
+      </div>
+      <div class="case-actions">
+        <button class="btn btn-primary" onclick="advanceCase()">推进到下一阶段</button>
+        <button class="btn btn-secondary" onclick="openModal('editModal')">编辑案例</button>
+        <button class="btn btn-secondary" onclick="openModal('uploadModal')">上传文档</button>
+      </div>
+    </div>
+    
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>客户信息</h3>
+        <div class="info-row">
+          <span class="info-label">姓名</span>
+          <span class="info-value">张女士</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">电话</span>
+          <span class="info-value">138****5678</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">邮箱</span>
+          <span class="info-value">zhang@example.com</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">关系</span>
+          <span class="info-value">母女</span>
+        </div>
+      </div>
+      
+      <div class="info-card">
+        <h3>目标人员信息</h3>
+        <div class="info-row">
+          <span class="info-label">姓名</span>
+          <span class="info-value">张明华</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">性别</span>
+          <span class="info-value">女</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">年龄</span>
+          <span class="info-value">约28岁</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">出生地</span>
+          <span class="info-value">河南省郑州市</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">最后联系</span>
+          <span class="info-value">2020-03-15</span>
+        </div>
+      </div>
+      
+      <div class="info-card">
+        <h3>案例状态</h3>
+        <div class="info-row">
+          <span class="info-label">当前阶段</span>
+          <span class="info-value">法务筛查</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">负责人</span>
+          <span class="info-value">李律师</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">优先级</span>
+          <span class="info-value">普通</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">预计完成</span>
+          <span class="info-value">2025-01-30</span>
+        </div>
+      </div>
+      
+      <div class="info-card">
+        <h3>财务信息</h3>
+        <div class="info-row">
+          <span class="info-label">报价金额</span>
+          <span class="info-value">¥8,000</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">已收定金</span>
+          <span class="info-value">¥3,000</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">待收尾款</span>
+          <span class="info-value">¥5,000</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">支付状态</span>
+          <span class="info-value">定金已付</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="documents-section">
+      <h3>相关文档</h3>
+      <div class="document-item">
+        <div class="document-icon">📄</div>
+        <div class="document-info">
+          <div class="document-name">寻人委托合同.pdf</div>
+          <div class="document-meta">上传时间: 2025-01-16 15:20 | 大小: 2.3MB</div>
+        </div>
+        <div class="action-buttons">
+          <button class="btn btn-sm btn-secondary">下载</button>
+          <button class="btn btn-sm btn-secondary">预览</button>
+        </div>
+      </div>
+      
+      <div class="document-item">
+        <div class="document-icon">🖼️</div>
+        <div class="document-info">
+          <div class="document-name">目标人员照片.jpg</div>
+          <div class="document-meta">上传时间: 2025-01-16 14:45 | 大小: 1.8MB</div>
+        </div>
+        <div class="action-buttons">
+          <button class="btn btn-sm btn-secondary">下载</button>
+          <button class="btn btn-sm btn-secondary">预览</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="timeline">
+      <h3>案例时间线</h3>
+      
+      <div class="timeline-item">
+        <div class="timeline-icon">1</div>
+        <div class="timeline-content">
+          <div class="timeline-title">案例创建</div>
+          <div class="timeline-meta">2025-01-16 14:30 | 系统自动</div>
+          <div class="timeline-notes">用户张女士提交寻人申请，寻找女儿张明华</div>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-icon">2</div>
+        <div class="timeline-content">
+          <div class="timeline-title">CRM录入完成</div>
+          <div class="timeline-meta">2025-01-16 15:15 | 客服小王</div>
+          <div class="timeline-notes">客户信息和目标人员信息已录入CRM系统，初步评估可行性较高</div>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-icon">3</div>
+        <div class="timeline-content">
+          <div class="timeline-title">分配法务审核</div>
+          <div class="timeline-meta">2025-01-16 15:30 | 系统自动</div>
+          <div class="timeline-notes">案例已分配给李律师进行法务合规性审核</div>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-icon">⏳</div>
+        <div class="timeline-content">
+          <div class="timeline-title">法务审核中</div>
+          <div class="timeline-meta">当前状态</div>
+          <div class="timeline-notes">李律师正在审核案例的合法性和可行性</div>
+        </div>
+      </div>
+    </div>
+    
+    <div style="text-align: center; margin: 2rem 0;">
+      <a href="index.html" class="btn btn-secondary">返回案例列表</a>
+    </div>
+  </div>
+  
+  <!-- 编辑案例模态框 -->
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>编辑案例信息</h3>
+        <button class="modal-close" onclick="closeModal('editModal')">&times;</button>
+      </div>
+      <form>
+        <div class="form-group">
+          <label>优先级</label>
+          <select class="form-control">
+            <option>普通</option>
+            <option>紧急</option>
+            <option>特急</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>负责人</label>
+          <select class="form-control">
+            <option>李律师</option>
+            <option>王调查员</option>
+            <option>陈调查员</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>备注</label>
+          <textarea class="form-control" rows="3"></textarea>
+        </div>
+        <div style="text-align: right; margin-top: 1.5rem;">
+          <button type="button" class="btn btn-secondary" onclick="closeModal('editModal')">取消</button>
+          <button type="submit" class="btn btn-primary">保存</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- 上传文档模态框 -->
+  <div id="uploadModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>上传文档</h3>
+        <button class="modal-close" onclick="closeModal('uploadModal')">&times;</button>
+      </div>
+      <form>
+        <div class="form-group">
+          <label>文档类型</label>
+          <select class="form-control">
+            <option>合同</option>
+            <option>报告</option>
+            <option>证据材料</option>
+            <option>其他</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>选择文件</label>
+          <input type="file" class="form-control" multiple>
+        </div>
+        <div class="form-group">
+          <label>描述</label>
+          <textarea class="form-control" rows="2" placeholder="请简要描述文档内容..."></textarea>
+        </div>
+        <div style="text-align: right; margin-top: 1.5rem;">
+          <button type="button" class="btn btn-secondary" onclick="closeModal('uploadModal')">取消</button>
+          <button type="submit" class="btn btn-primary">上传</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <script>
+    function openModal(modalId) {
+      document.getElementById(modalId).style.display = 'block';
+    }
+    
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+    }
+    
+    function advanceCase() {
+      if (confirm('确定要推进案例到下一阶段吗？')) {
+        // 这里调用API推进案例
+        alert('案例已推进到报价阶段');
+        location.reload();
+      }
+    }
+    
+    // 点击模态框外部关闭
+    window.onclick = function(event) {
+      if (event.target.classList.contains('modal')) {
+        event.target.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
