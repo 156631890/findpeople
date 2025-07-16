@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>People Search Service | FindPeople</title>
+  <meta name="description" content="Fill out detailed information and our professional team will help you find the missing person. Safe, legal, and efficient people search services.">
+  <link rel="stylesheet" href="/partials/site-style.css">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --primary: #3b82f6;
+      --text: #0f172a;
+      --muted: #6b7280;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    
+    .form-card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,.1);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid #e5e7eb;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+    
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    
+    .submit-btn {
+      background: var(--primary);
+      color: #fff;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.2s;
+    }
+    
+    .submit-btn:hover {
+      background: #2563eb;
+    }
+    
+    .privacy-notice {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    
+    @media (max-width: 768px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="text-align: center; margin-bottom: 2rem; color: var(--primary);">People Search Service Application</h1>
+    
+    <div class="form-card">
+      <div class="privacy-notice">
+        <strong>Privacy Protection Commitment:</strong> All information you provide will be strictly confidential and used only for people search services. We promise not to disclose any personal information.
+      </div>
+      
+      <form action="https://formspree.io/f/yourFormID" method="POST">
+        <h3 style="margin-bottom: 1rem; color: var(--text);">Client Information</h3>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="client-name">Your Name *</label>
+            <input type="text" id="client-name" name="client_name" required>
+          </div>
+          <div class="form-group">
+            <label for="client-phone">Contact Phone *</label>
+            <input type="tel" id="client-phone" name="client_phone" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="client-email">Email Address</label>
+          <input type="email" id="client-email" name="client_email">
+        </div>
+        
+        <div class="form-group">
+          <label for="relationship">Relationship with the person you're looking for *</label>
+          <select id="relationship" name="relationship" required>
+            <option value="">Please select relationship</option>
+            <option value="Family">Family</option>
+            <option value="Friend">Friend</option>
+            <option value="Classmate">Classmate</option>
+            <option value="Colleague">Colleague</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        
+        <hr style="margin: 2rem 0; border: none; border-top: 1px solid #e5e7eb;">
+        
+        <h3 style="margin-bottom: 1rem; color: var(--text);">Target Person Information</h3>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="target-name">Name *</label>
+            <input type="text" id="target-name" name="target_name" required>
+          </div>
+          <div class="form-group">
+            <label for="target-gender">Gender</label>
+            <select id="target-gender" name="target_gender">
+              <option value="">Please select</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="target-age">Age (Approximate)</label>
+            <input type="number" id="target-age" name="target_age" min="1" max="120">
+          </div>
+          <div class="form-group">
+            <label for="target-birthplace">Birthplace</label>
+            <input type="text" id="target-birthplace" name="target_birthplace">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="last-known-location">Last Known Address/Location</label>
+          <input type="text" id="last-known-location" name="last_known_location">
+        </div>
+        
+        <div class="form-group">
+          <label for="last-contact">Last Contact Date</label>
+          <input type="date" id="last-contact" name="last_contact">
+        </div>
+        
+        <div class="form-group">
+          <label for="additional-info">Additional Information (Workplace, characteristics, hobbies, etc.)</label>
+          <textarea id="additional-info" name="additional_info" placeholder="Please provide any information that might help in the search..."></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="reason">Reason for Search</label>
+          <textarea id="reason" name="reason" placeholder="Please briefly describe the reason for searching for this person..."></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn">Submit Search Request</button>
+      </form>
+    </div>
+    
+    <!-- AdSense Ad -->
+    <div style="text-align: center; margin: 2rem 0;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-8231924120348302"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="/index-en.html" style="color: var(--primary); text-decoration: none;">← Back to Home</a>
+    </div>
+  </div>
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8231924120348302" crossorigin="anonymous"></script>
+</body>
+</html>
