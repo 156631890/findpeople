@@ -9,18 +9,21 @@ Allow: /index.html
 Allow: /index-en.html
 Allow: /search.html
 Allow: /search-en.html
-Allow: /success.stories.html
+Allow: /success-stories.html
+Allow: /success-stories-en.html
 Allow: /privacy.html
 Allow: /terms.html
 
 # 静态资源
 Allow: /partials/
+Allow: /js/
 Allow: /images/
+Allow: /favicon.svg
 Allow: /favicon.png
-Allow: /favicon.ico
 
 # 不允许抓取的内容
 Disallow: /admin/
+Disallow: /api/
 Disallow: /private/
 Disallow: /temp/
 Disallow: /*.pdf$
