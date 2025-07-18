@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FindPeople | Professional People Search Services</title>
-  <meta name="description" content="FindPeople provides professional people search services to help you reconnect with lost family, friends, classmates, and colleagues. 98% success rate with safe, legal, and efficient solutions.">
-  <meta name="keywords" content="people search,find people,missing persons,reconnect,classmates,family reunion,people finder,locate family members,professional search service">
+  <meta name="description"
+    content="FindPeople provides professional people search services to help you reconnect with lost family, friends, classmates, and colleagues. 98% success rate with safe, legal, and efficient solutions.">
+  <meta name="keywords"
+    content="people search,find people,missing persons,reconnect,classmates,family reunion,people finder,locate family members,professional search service">
   <link rel="canonical" href="https://www.findpeople.com/index-en.html">
   <link rel="alternate" hreflang="zh-CN" href="https://www.findpeople.com/">
   <link rel="alternate" hreflang="en" href="https://www.findpeople.com/index-en.html">
@@ -21,20 +24,28 @@
     :root {
       --bg: #f8fafc;
       --primary: #3b82f6;
+      --primary-dark: #2563eb;
       --text: #0f172a;
       --muted: #6b7280;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
     }
+
     header {
       background: #fff;
       padding: 1rem 2rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,.05);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
       position: sticky;
       top: 0;
       z-index: 10;
@@ -42,27 +53,43 @@
       justify-content: space-between;
       align-items: center;
     }
-    .logo a { 
-      font-size: 1.5rem; 
-      color: var(--primary); 
+
+    .logo a {
+      font-size: 1.5rem;
+      color: var(--primary);
       text-decoration: none;
       font-weight: bold;
     }
-    nav ul { list-style: none; display: flex; gap: 1rem; }
-    nav a { text-decoration: none; color: var(--text); font-weight: 600; }
-    nav a:hover { color: var(--primary); }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
 
     .language-switcher {
       display: flex;
       gap: 0.5rem;
       align-items: center;
     }
+
     .language-switcher a {
       padding: 0.25rem 0.5rem;
       text-decoration: none;
       color: var(--muted);
       border-radius: 0.25rem;
     }
+
     .language-switcher a.active {
       background: var(--primary);
       color: white;
@@ -74,17 +101,20 @@
       background: linear-gradient(135deg, var(--primary), #60a5fa);
       color: #fff;
     }
+
     .hero h1 {
       font-size: 2.5rem;
       font-weight: bold;
       margin-bottom: 1rem;
     }
+
     .hero p {
       font-size: 1.25rem;
       opacity: 0.95;
       max-width: 640px;
       margin: 0 auto;
     }
+
     .search-form {
       display: flex;
       gap: .5rem;
@@ -92,16 +122,19 @@
       justify-content: center;
       margin-top: 2rem;
     }
+
     .search-form input,
     .search-form button {
       font-size: 1rem;
     }
+
     .search-form input {
       padding: .8rem 1rem;
       border-radius: .375rem;
       border: none;
       min-width: 300px;
     }
+
     .search-form button {
       padding: .8rem 1.5rem;
       border: none;
@@ -110,20 +143,39 @@
       color: var(--primary);
       font-weight: 600;
       cursor: pointer;
+      transition: all 0.2s ease;
     }
-    .search-form button:hover { background: #f1f5f9; }
 
-    .section { max-width: 960px; margin: 3rem auto; padding: 0 1.5rem; }
+    .search-form button:hover {
+      background: #f1f5f9;
+      transform: translateY(-2px);
+    }
+
+    .section {
+      max-width: 960px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
     .card {
       background: #fff;
       padding: 1.5rem;
       border-radius: .75rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
       margin-bottom: 1.5rem;
-      transition: transform .2s ease;
+      transition: transform .2s ease, box-shadow .2s ease;
     }
-    .card:hover { transform: translateY(-4px); }
-    .card h3 { font-size: 1.25rem; margin-bottom: .5rem; color: var(--primary); }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: .5rem;
+      color: var(--primary);
+    }
 
     .stats {
       display: grid;
@@ -131,17 +183,29 @@
       gap: 1rem;
       margin: 2rem 0;
     }
+
     .stat-card {
       background: #fff;
       padding: 1.5rem;
       border-radius: .75rem;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+      transition: transform 0.3s ease;
     }
+
+    .stat-card:hover {
+      transform: translateY(-2px);
+    }
+
     .stat-number {
       font-size: 2rem;
       font-weight: bold;
       color: var(--primary);
+      transition: transform 0.3s ease;
+    }
+
+    .stat-card:hover .stat-number {
+      transform: scale(1.1);
     }
 
     footer {
@@ -151,20 +215,148 @@
       background: #fff;
       margin-top: 3rem;
     }
-    footer a { color: var(--muted); text-decoration: none; }
-    footer a:hover { color: var(--primary); }
 
-    .nav-toggle { display: none; }
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--primary);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .nav-toggle summary {
+      list-style: none;
+      font-size: 1.5rem;
+    }
+
+    .nav-toggle summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .nav-toggle[open] nav {
+      animation: slideDown 0.3s ease-out forwards;
+    }
+
+    .nav-toggle nav {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: white;
+      width: 200px;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* 响应式设计增强 */
     @media (max-width: 768px) {
-      .nav-toggle { display: block; }
-      .desktop { display: none; }
-      .hero h1 { font-size: 2rem; }
-      .search-form input { min-width: 250px; }
+      header {
+        padding: 1rem;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .desktop {
+        display: none;
+      }
+
+      .hero {
+        padding: 3rem 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      .search-form {
+        flex-direction: column;
+        width: 100%;
+        max-width: 400px;
+        margin: 2rem auto 0;
+      }
+
+      .search-form input {
+        min-width: 100%;
+        width: 100%;
+      }
+
+      .search-form button {
+        width: 100%;
+      }
+
+      .section {
+        padding: 0 1rem;
+        margin: 2rem auto;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+      }
+
+      .card {
+        padding: 1.25rem;
+      }
+
+      .card h3 {
+        font-size: 1.1rem;
+      }
+
+      footer {
+        padding: 1.5rem 1rem;
+      }
     }
   </style>
 
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8231924120348302" crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8231924120348302"
+    crossorigin="anonymous"></script>
 </head>
+
 <body>
   <header>
     <div class="logo"><a href="/index-en.html">FindPeople</a></div>
@@ -193,7 +385,8 @@
 
   <section class="hero">
     <h1>Professional People Search Services</h1>
-    <p>We provide safe, legal, and efficient people search services to help you reconnect with lost family, friends, classmates, and colleagues</p>
+    <p>We provide safe, legal, and efficient people search services to help you reconnect with lost family, friends,
+      classmates, and colleagues</p>
     <p style="margin-top:1rem;">Successfully helped over 5,000 families reunite</p>
     <form class="search-form" action="/search-en.html" method="GET">
       <input type="text" name="name" placeholder="Enter the name of the person you're looking for" required>
@@ -223,48 +416,51 @@
 
     <!-- AdSense Ad -->
     <div style="text-align: center; margin: 2rem 0;">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-8231924120348302"
-           data-ad-slot="1234567890"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8231924120348302" data-ad-slot="1234567890"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
       <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
     </div>
 
     <section id="services">
       <h2 style="text-align: center; margin-bottom: 2rem; color: var(--text);">Our Services</h2>
-      
+
       <div class="card">
         <h3>Missing Family Members</h3>
-        <p>Our professional team helps you find lost family members, including parents, children, siblings, and other relatives. We use legal channels and professional methods to protect privacy while efficiently locating people.</p>
+        <p>Our professional team helps you find lost family members, including parents, children, siblings, and other
+          relatives. We use legal channels and professional methods to protect privacy while efficiently locating
+          people.</p>
       </div>
 
       <div class="card">
         <h3>Classmate & Friend Reunions</h3>
-        <p>Help you find lost classmates and friends to reconnect and organize reunions. Let beautiful friendships bloom again and relive those precious memories.</p>
+        <p>Help you find lost classmates and friends to reconnect and organize reunions. Let beautiful friendships bloom
+          again and relive those precious memories.</p>
       </div>
-      
+
       <div class="card">
         <h3>Business Contact Search</h3>
-        <p>Assist businesses in finding former colleagues, partners, or important clients to support business cooperation. Professional, confidential, and efficient services to boost business development.</p>
+        <p>Assist businesses in finding former colleagues, partners, or important clients to support business
+          cooperation. Professional, confidential, and efficient services to boost business development.</p>
       </div>
-      
+
       <div class="card">
         <h3>Legal-Related Searches</h3>
-        <p>Provide legal people search services for law firms, courts, and other institutions to assist legal proceedings. Strictly comply with laws and regulations to ensure procedural compliance.</p>
+        <p>Provide legal people search services for law firms, courts, and other institutions to assist legal
+          proceedings. Strictly comply with laws and regulations to ensure procedural compliance.</p>
       </div>
     </section>
   </main>
 
   <footer id="about">
     <h3>About FindPeople</h3>
-    <p>FindPeople was established in 2020 as a professional people search service organization. We have an experienced professional team</p>
+    <p>FindPeople was established in 2020 as a professional people search service organization. We have an experienced
+      professional team</p>
     <p>dedicated to providing safe, legal, and efficient people search services for our clients.</p>
     <br>
-    <p>© 2025 FindPeople · <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Service</a> · <a href="/sitemap.xml">Sitemap</a></p>
+    <p>© 2025 FindPeople · <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Service</a> · <a
+        href="/sitemap.xml">Sitemap</a></p>
   </footer>
 
   <script defer src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
@@ -294,4 +490,5 @@
   <script src="/api/integration.js"></script>
   <script src="/js/analytics.js"></script>
 </body>
+
 </html>
