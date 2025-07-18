@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于我们 | 寻人网</title>
+  <meta name="description" content="寻人网是一家专业的人员查找服务机构，成立于2020年，拥有经验丰富的专业团队，致力于为客户提供安全、合法、高效的寻人服务。">
+  <meta name="keywords" content="寻人网,寻人公司,寻人机构,寻人团队,寻人服务,找人服务,寻人历史,寻人使命">
+  <link rel="canonical" href="https://www.findpeople.online/about.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://www.findpeople.online/about.html">
+  <link rel="alternate" hreflang="en" href="https://www.findpeople.online/about-en.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/partials/site-style.css">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --primary: #3b82f6;
+      --primary-dark: #2563eb;
+      --text: #0f172a;
+      --muted: #6b7280;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    
+    header {
+      background: #fff;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,.05);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo a { 
+      font-size: 1.5rem; 
+      color: var(--primary); 
+      text-decoration: none;
+      font-weight: bold;
+    }
+    
+    .language-switcher {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    
+    .language-switcher a {
+      padding: 0.25rem 0.5rem;
+      text-decoration: none;
+      color: var(--muted);
+      border-radius: 0.25rem;
+    }
+    
+    .language-switcher a.active {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .nav-toggle { 
+      display: none; 
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    
+    .nav-toggle summary {
+      list-style: none;
+      font-size: 1.5rem;
+    }
+    
+    .nav-toggle summary::-webkit-details-marker {
+      display: none;
+    }
+    
+    .nav-toggle[open] nav {
+      animation: slideDown 0.3s ease-out forwards;
+    }
+    
+    .nav-toggle nav {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: white;
+      width: 200px;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+    
+    .hero-section {
+      background: linear-gradient(135deg, var(--primary), #60a5fa);
+      color: white;
+      padding: 4rem 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.15;
+      z-index: 0;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    
+    .hero-description {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+    
+    .section {
+      margin-bottom: 4rem;
+    }
+    
+    .section-title {
+      font-size: 1.75rem;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.75rem;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--primary);
+    }
+    
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .about-image {
+      width: 100%;
+      height: auto;
+      border-radius: 1rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    
+    .about-content p {
+      margin-bottom: 1rem;
+    }
+    
+    .about-content p:last-child {
+      margin-bottom: 0;
+    }
+    
+    .mission-values {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    
+    .value-card {
+      text-align: center;
+      padding: 1.5rem;
+      background: #f8fafc;
+      border-radius: 0.75rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .value-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    
+    .value-icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(59, 130, 246, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      color: var(--primary);
+      font-size: 1.75rem;
+    }
+    
+    .value-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+    
+    .value-description {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    
+    .team-section {
+      text-align: center;
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .team-member {
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease;
+    }
+    
+    .team-member:hover {
+      transform: translateY(-5px);
+    }
+    
+    .member-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    
+    .member-info {
+      padding: 1.5rem;
+    }
+    
+    .member-name {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: var(--text);
+    }
+    
+    .member-role {
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    
+    .member-bio {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    
+    .timeline-section {
+      position: relative;
+    }
+    
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background-color: var(--primary);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+    }
+    
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+    
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: -10px;
+      background-color: white;
+      border: 4px solid var(--primary);
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    
+    .timeline-item.left {
+      left: 0;
+    }
+    
+    .timeline-item.right {
+      left: 50%;
+    }
+    
+    .timeline-item.right::after {
+      left: -10px;
+    }
+    
+    .timeline-content {
+      padding: 1.5rem;
+      background-color: white;
+      position: relative;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    .timeline-date {
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .timeline-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+    
+    .timeline-description {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    
+    .stats-section {
+      background: linear-gradient(135deg, var(--primary), #60a5fa);
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .stat-item {
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    
+    .testimonials-section {
+      text-align: center;
+    }
+    
+    .testimonials-slider {
+      margin-top: 2rem;
+      position: relative;
+    }
+    
+    .testimonial {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      text-align: left;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .testimonial-content {
+      font-style: italic;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    
+    .testimonial-content::before {
+      content: '"';
+      font-size: 4rem;
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      color: rgba(59, 130, 246, 0.1);
+      font-family: Georgia, serif;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+    
+    .author-image {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 1rem;
+    }
+    
+    .author-info {
+      flex: 1;
+    }
+    
+    .author-name {
+      font-weight: 600;
+      color: var(--text);
+    }
+    
+    .author-role {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    
+    .cta-section {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .cta-title {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+    
+    .cta-description {
+      color: var(--muted);
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .cta-button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    .contact-info {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+    }
+    
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(59, 130, 246, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      color: var(--primary);
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    
+    .contact-content {
+      flex: 1;
+    }
+    
+    .contact-label {
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+    
+    .contact-value {
+      color: var(--muted);
+    }
+    
+    .contact-value a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    .contact-value a:hover {
+      text-decoration: underline;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      background: #fff;
+      margin-top: 3rem;
+    }
+    
+    footer a { 
+      color: var(--muted); 
+      text-decoration: none; 
+    }
+    
+    footer a:hover { 
+      color: var(--primary); 
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        padding: 1rem;
+      }
+      
+      .nav-toggle { 
+        display: block; 
+      }
+      
+      .desktop { 
+        display: none; 
+      }
+      
+      .container {
+        padding: 0 1rem;
+      }
+      
+      .hero-section {
+        padding: 3rem 1.5rem;
+      }
+      
+      .hero-title {
+        font-size: 2rem;
+      }
+      
+      .hero-description {
+        font-size: 1.1rem;
+      }
+      
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .about-image {
+        margin-bottom: 1.5rem;
+      }
+      
+      .timeline::after {
+        left: 31px;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      
+      .timeline-item.right {
+        left: 0;
+      }
+      
+      .timeline-item::after {
+        left: 21px;
+      }
+      
+      .timeline-item.right::after {
+        left: 21px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 1.75rem;
+      }
+      
+      .hero-description {
+        font-size: 1rem;
+      }
+      
+      .section-title {
+        font-size: 1.5rem;
+      }
+      
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      
+      .testimonial {
+        padding: 1.5rem;
+      }
+      
+      .cta-button {
+        width: 100%;
+        padding: 0.9rem 1.5rem;
+      }
+      
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="/">寻人网</a></div>
+    <div class="language-switcher">
+      <a href="/about.html" class="active" title="中文">中文</a>
+      <a href="/about-en.html" title="English">EN</a>
+    </div>
+    <details class="nav-toggle">
+      <summary>☰</summary>
+      <nav>
+        <a href="/">首页</a>
+        <a href="/services.html">服务</a>
+        <a href="/search.html">寻人</a>
+        <a href="/success-stories.html">成功案例</a>
+        <a href="/faq.html">常见问题</a>
+        <a href="/about.html">关于我们</a>
+        <a href="/contact.html">联系我们</a>
+      </nav>
+    </details>
+    <nav class="desktop">
+      <a href="/">首页</a>
+      <a href="/services.html">服务</a>
+      <a href="/search.html">寻人</a>
+      <a href="/success-stories.html">成功案例</a>
+      <a href="/faq.html">常见问题</a>
+      <a href="/about.html">关于我们</a>
+      <a href="/contact.html">联系我们</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">关于寻人网</h1>
+        <p class="hero-description">我们是一家专业的人员查找服务机构，致力于帮助人们重新建立联系，创造团聚的喜悦。</p>
+      </div>
+    </div>
+    
+    <div class="section">
+      <div class="about-grid">
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="寻人网办公环境" class="about-image">
+        <div class="about-content">
+          <h2 class="section-title">我们的故事</h2>
+          <p>寻人网成立于2020年，源于创始人张明的一次亲身经历。他在寻找失联多年的大学同学时，发现市场上缺乏专业、合法、高效的寻人服务。</p>
+          <p>经过多次尝试和失败后，张明决定组建一支专业团队，利用现代技术和合法渠道，为有寻人需求的人提供帮助。从最初的3人小组，发展到如今拥有50多名专业人员的综合性寻人服务机构。</p>
+          <p>五年来，我们已成功帮助5,000多个家庭重新团聚，找到10,000多位失联人员，成功率高达98%。我们的服务范围覆盖全国各省市，并逐步拓展到国际寻人领域。</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <div class="mission-values">
+        <h2 class="section-title">我们的使命与价值观</h2>
+        <p style="margin-bottom: 2rem;">我们的使命是通过专业、合法、高效的寻人服务，帮助人们重新建立联系，创造团聚的喜悦，让每一次分离都有重逢的希望。</p>
+        
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">🔍</div>
+            <h3 class="value-title">专业诚信</h3>
+            <p class="value-description">以专业的态度和技术提供服务，诚实透明地与客户沟通，不夸大承诺，不隐瞒风险。</p>
+          </div>
+          
+          <div class="value-card">
+            <div class="value-icon">⚖️</div>
+            <h3 class="value-title">合法合规</h3>
+            <p class="value-description">严格遵守法律法规，只使用合法渠道获取信息，尊重每个人的隐私权和选择权。</p>
+          </div>
+          
+          <div class="value-card">
+            <div class="value-icon">🔐</div>
+            <h3 class="value-title">隐私保护</h3>
+            <p class="value-description">严格保护客户和被寻找人员的个人信息，建立完善的信息安全管理体系。</p>
+          </div>
+          
+          <div class="value-card">
+            <div class="value-icon">⚡</div>
+            <h3 class="value-title">高效服务</h3>
+            <p class="value-description">利用先进技术和专业方法，高效开展寻人工作，为客户节省时间和精力。</p>
+          </div>
+          
+          <div class="value-card">
+            <div class="value-icon">❤️</div>
+            <h3 class="value-title">人文关怀</h3>
+            <p class="value-description">关注寻人过程中的情感需求，提供心理支持和沟通指导，让团聚更加顺利和温暖。</p>
+          </div>
+          
+          <div class="value-card">
+            <div class="value-icon">🤝</div>
+            <h3 class="value-title">社会责任</h3>
+            <p class="value-description">积极参与公益寻人活动，为特殊困难群体提供援助，履行企业社会责任。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section team-section">
+      <h2 class="section-title" style="margin-left: auto; margin-right: auto;">我们的团队</h2>
+      <p>寻人网拥有一支由50多名专业人员组成的精英团队，包括调查专家、数据分析师、法律顾问、心理咨询师等，为客户提供全方位的寻人服务。</p>
+      
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="张明 - 创始人兼CEO" class="member-image">
+          <div class="member-info">
+            <h3 class="member-name">张明</h3>
+            <div class="member-role">创始人兼CEO</div>
+            <p class="member-bio">前公安系统调查专家，拥有15年寻人经验。创立寻人网的初衷是帮助更多人实现团聚的愿望。</p>
+          </div>
+        </div>
+        
+        <div class="team-member">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=988&q=80" alt="李婷 - 首席运营官" class="member-image">
+          <div class="member-info">
+            <h3 class="member-name">李婷</h3>
+            <div class="member-role">首席运营官</div>
+            <p class="member-bio">拥有10年项目管理经验，负责寻人网的日常运营和服务质量管理，确保每个案例都得到专业处理。</p>
+          </div>
+        </div>
+        
+        <div class="team-member">
+          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="王强 - 技术总监" class="member-image">
+          <div class="member-info">
+            <h3 class="member-name">王强</h3>
+            <div class="member-role">技术总监</div>
+            <p class="member-bio">数据科学专家，开发了寻人网的核心算法和技术系统，利用大数据和AI技术提高寻人效率。</p>
+          </div>
+        </div>
+        
+        <div class="team-member">
+          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="赵静 - 首席心理顾问" class="member-image">
+          <div class="member-info">
+            <h3 class="member-name">赵静</h3>
+            <div class="member-role">首席心理顾问</div>
+            <p class="member-bio">资深心理咨询师，专注于寻人过程中的心理支持和团聚后的关系重建指导。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section timeline-section">
+      <h2 class="section-title">我们的发展历程</h2>
+      
+      <div class="timeline">
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <div class="timeline-date">2020年1月</div>
+            <h3 class="timeline-title">寻人网成立</h3>
+            <p class="timeline-description">张明创立寻人网，开始提供专业寻人服务，初期团队仅3人。</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <div class="timeline-date">2020年8月</div>
+            <h3 class="timeline-title">首个100个成功案例</h3>
+            <p class="timeline-description">在成立半年内，成功完成100个寻人案例，建立了初步的市场口碑。</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <div class="timeline-date">2021年3月</div>
+            <h3 class="timeline-title">技术系统升级</h3>
+            <p class="timeline-description">引入大数据分析和AI技术，开发专业寻人系统，大幅提高寻人效率。</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <div class="timeline-date">2021年11月</div>
+            <h3 class="timeline-title">团队扩展至20人</h3>
+            <p class="timeline-description">团队规模扩大到20人，包括调查专家、数据分析师、法律顾问等专业人员。</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <div class="timeline-date">2022年5月</div>
+            <h3 class="timeline-title">成立公益寻人部门</h3>
+            <p class="timeline-description">成立专门的公益寻人部门，为特殊困难群体提供免费或低成本的寻人服务。</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <div class="timeline-date">2023年2月</div>
+            <h3 class="timeline-title">达成1000个成功案例</h3>
+            <p class="timeline-description">累计成功案例突破1000个，成功率稳定在98%以上，成为行业标杆。</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <div class="timeline-date">2023年9月</div>
+            <h3 class="timeline-title">开展国际寻人业务</h3>
+            <p class="timeline-description">与国际合作伙伴建立网络，开始提供跨国寻人服务，拓展业务范围。</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <div class="timeline-date">2024年4月</div>
+            <h3 class="timeline-title">团队扩展至50人</h3>
+            <p class="timeline-description">团队规模进一步扩大到50人，服务能力和专业水平大幅提升。</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <div class="timeline-date">2025年1月</div>
+            <h3 class="timeline-title">五周年庆典</h3>
+            <p class="timeline-description">庆祝成立五周年，累计成功案例突破5000个，成为行业领导者。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="stats-section">
+      <h2>我们的成绩</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number">5,000+</span>
+          <span class="stat-label">成功案例</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">98%</span>
+          <span class="stat-label">成功率</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">专业团队</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">31</span>
+          <span class="stat-label">服务省份</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section testimonials-section">
+      <h2 class="section-title" style="margin-left: auto; margin-right: auto;">客户评价</h2>
+      
+      <div class="testimonials-slider">
+        <div class="testimonial">
+          <div class="testimonial-content">
+            寻人网的服务超出了我的期望。我的父亲失联了20多年，我几乎放弃了希望。但寻人网的团队仅用了两周时间就找到了他。他们的专业和效率令人印象深刻，更重要的是，他们在整个过程中提供的心理支持帮助我们顺利重建了关系。我永远感谢寻人网让我们家庭重新团聚。
+          </div>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1061&q=80" alt="刘女士" class="author-image">
+            <div class="author-info">
+              <div class="author-name">刘女士</div>
+              <div class="author-role">亲人寻找客户</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2 class="section-title">我们的合作伙伴</h2>
+      <p style="margin-bottom: 2rem;">我们与多家机构建立了长期合作关系，共同为客户提供更全面、更专业的寻人服务。</p>
+      
+      <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; align-items: center;">
+        <div style="text-align: center;">
+          <div style="width: 120px; height: 120px; background: #f8fafc; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+            <span style="font-size: 1rem; color: var(--muted);">合作伙伴标志</span>
+          </div>
+          <p style="margin-top: 0.5rem; color: var(--text); font-weight: 500;">中国红十字会</p>
+        </div>
+        
+        <div style="text-align: center;">
+          <div style="width: 120px; height: 120px; background: #f8fafc; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+            <span style="font-size: 1rem; color: var(--muted);">合作伙伴标志</span>
+          </div>
+          <p style="margin-top: 0.5rem; color: var(--text); font-weight: 500;">全国校友联盟</p>
+        </div>
+        
+        <div style="text-align: center;">
+          <div style="width: 120px; height: 120px; background: #f8fafc; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+            <span style="font-size: 1rem; color: var(--muted);">合作伙伴标志</span>
+          </div>
+          <p style="margin-top: 0.5rem; color: var(--text); font-weight: 500;">中国法律援助基金会</p>
+        </div>
+        
+        <div style="text-align: center;">
+          <div style="width: 120px; height: 120px; background: #f8fafc; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+            <span style="font-size: 1rem; color: var(--muted);">合作伙伴标志</span>
+          </div>
+          <p style="margin-top: 0.5rem; color: var(--text); font-weight: 500;">国际寻人网络</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cta-section">
+      <h2 class="cta-title">准备开始您的寻人之旅？</h2>
+      <p class="cta-description">填写寻人申请表，我们的专业顾问将在24小时内与您联系，为您提供个性化的寻人方案。</p>
+      <a href="/search.html" class="cta-button">立即开始寻人</a>
+    </div>
+    
+    <div class="section">
+      <h2 class="section-title">联系我们</h2>
+      
+      <div class="contact-info">
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-content">
+              <div class="contact-label">办公地址</div>
+              <div class="contact-value">北京市海淀区中关村大街1号</div>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-content">
+              <div class="contact-label">客服热线</div>
+              <div class="contact-value"><a href="tel:400-123-4567">400-123-4567</a></div>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-content">
+              <div class="contact-label">电子邮箱</div>
+              <div class="contact-value"><a href="mailto:contact@findpeople.online">contact@findpeople.online</a></div>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">🕒</div>
+            <div class="contact-content">
+              <div class="contact-label">工作时间</div>
+              <div class="contact-value">周一至周五 9:00-18:00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <h3>关于寻人网</h3>
+    <p>寻人网成立于2020年，是一家专业的人员查找服务机构。我们拥有经验丰富的专业团队，</p>
+    <p>致力于为客户提供安全、合法、高效的寻人服务。</p>
+    <br>
+    <p>© 2025 寻人网 · <a href="/privacy.html">隐私政策</a> · <a href="/terms.html">使用条款</a> · <a href="/sitemap.xml">网站地图</a></p>
+  </footer>
+
+  <script src="/js/schema-markup.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/analytics.js"></script>
+</body>
+</html>

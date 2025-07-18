@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>专业寻人服务详情 | 寻人网</title>
+  <meta name="description" content="寻人网提供专业的人员查找服务，包括亲人寻找、同学寻找、商务人员查找和法律相关寻人。了解我们的服务流程、方法和成功率。">
+  <meta name="keywords" content="寻人服务,寻亲服务,找人服务,同学寻找,商务寻人,法律寻人,寻人流程,寻人方法">
+  <link rel="canonical" href="https://www.findpeople.online/services.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://www.findpeople.online/services.html">
+  <link rel="alternate" hreflang="en" href="https://www.findpeople.online/services-en.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/partials/site-style.css">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --primary: #3b82f6;
+      --primary-dark: #2563eb;
+      --text: #0f172a;
+      --muted: #6b7280;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    
+    header {
+      background: #fff;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,.05);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo a { 
+      font-size: 1.5rem; 
+      color: var(--primary); 
+      text-decoration: none;
+      font-weight: bold;
+    }
+    
+    .language-switcher {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    
+    .language-switcher a {
+      padding: 0.25rem 0.5rem;
+      text-decoration: none;
+      color: var(--muted);
+      border-radius: 0.25rem;
+    }
+    
+    .language-switcher a.active {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .nav-toggle { 
+      display: none; 
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    
+    .nav-toggle summary {
+      list-style: none;
+      font-size: 1.5rem;
+    }
+    
+    .nav-toggle summary::-webkit-details-marker {
+      display: none;
+    }
+    
+    .nav-toggle[open] nav {
+      animation: slideDown 0.3s ease-out forwards;
+    }
+    
+    .nav-toggle nav {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: white;
+      width: 200px;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+    
+    .page-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .page-header h1 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    
+    .page-header p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+    
+    .service-card {
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .service-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .service-content {
+      padding: 1.5rem;
+    }
+    
+    .service-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+    
+    .service-description {
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    
+    .service-features {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .service-features li {
+      padding-left: 1.5rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+    
+    .service-features li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+    
+    .service-link {
+      display: inline-block;
+      margin-top: 1rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: transform 0.2s ease;
+    }
+    
+    .service-link:hover {
+      transform: translateX(5px);
+    }
+    
+    .process-section {
+      background: white;
+      padding: 3rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      margin-bottom: 4rem;
+    }
+    
+    .section-title {
+      font-size: 1.75rem;
+      color: var(--text);
+      margin-bottom: 2rem;
+      text-align: center;
+      position: relative;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--primary);
+    }
+    
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+    
+    .process-step {
+      text-align: center;
+      position: relative;
+    }
+    
+    .step-number {
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin: 0 auto 1rem;
+    }
+    
+    .step-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+    
+    .step-description {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    
+    .methods-section {
+      margin-bottom: 4rem;
+    }
+    
+    .methods-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .method-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,.05);
+      transition: transform 0.2s ease;
+    }
+    
+    .method-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    .method-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(59, 130, 246, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      font-size: 1.5rem;
+    }
+    
+    .method-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+    
+    .stats-section {
+      background: linear-gradient(135deg, var(--primary), #60a5fa);
+      color: white;
+      padding: 3rem;
+      border-radius: 1rem;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .stat-item {
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    
+    .cta-section {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .cta-title {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+    
+    .cta-description {
+      color: var(--muted);
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .cta-button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    .faq-section {
+      margin-bottom: 4rem;
+    }
+    
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+    
+    .faq-question {
+      background: white;
+      padding: 1rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,.1);
+      transition: background-color 0.2s ease;
+    }
+    
+    .faq-question:hover {
+      background: #f8fafc;
+    }
+    
+    .faq-question::after {
+      content: '+';
+      font-size: 1.25rem;
+      color: var(--primary);
+    }
+    
+    .faq-item[open] .faq-question::after {
+      content: '−';
+    }
+    
+    .faq-answer {
+      padding: 1rem 1.5rem;
+      color: var(--muted);
+      background: white;
+      border-radius: 0 0 0.5rem 0.5rem;
+      margin-top: -0.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    }
+    
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      background: #fff;
+      margin-top: 3rem;
+    }
+    
+    footer a { 
+      color: var(--muted); 
+      text-decoration: none; 
+    }
+    
+    footer a:hover { 
+      color: var(--primary); 
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        padding: 1rem;
+      }
+      
+      .nav-toggle { 
+        display: block; 
+      }
+      
+      .desktop { 
+        display: none; 
+      }
+      
+      .container {
+        padding: 0 1rem;
+      }
+      
+      .page-header h1 {
+        font-size: 2rem;
+      }
+      
+      .process-section {
+        padding: 2rem 1.5rem;
+      }
+      
+      .section-title {
+        font-size: 1.5rem;
+      }
+      
+      .stats-section {
+        padding: 2rem 1.5rem;
+      }
+      
+      .stat-number {
+        font-size: 2rem;
+      }
+      
+      .cta-title {
+        font-size: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .page-header h1 {
+        font-size: 1.75rem;
+      }
+      
+      .page-header p {
+        font-size: 1rem;
+      }
+      
+      .service-card {
+        margin-bottom: 1.5rem;
+      }
+      
+      .process-section {
+        padding: 1.5rem 1rem;
+      }
+      
+      .section-title {
+        font-size: 1.35rem;
+      }
+      
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+      
+      .stats-section {
+        padding: 1.5rem 1rem;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      
+      .stat-number {
+        font-size: 1.75rem;
+      }
+      
+      .cta-button {
+        width: 100%;
+        padding: 0.9rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="/">寻人网</a></div>
+    <div class="language-switcher">
+      <a href="/services.html" class="active" title="中文">中文</a>
+      <a href="/services-en.html" title="English">EN</a>
+    </div>
+    <details class="nav-toggle">
+      <summary>☰</summary>
+      <nav>
+        <a href="/">首页</a>
+        <a href="/services.html">服务</a>
+        <a href="/search.html">寻人</a>
+        <a href="/success-stories.html">成功案例</a>
+        <a href="/faq.html">常见问题</a>
+        <a href="/about.html">关于我们</a>
+        <a href="/contact.html">联系我们</a>
+      </nav>
+    </details>
+    <nav class="desktop">
+      <a href="/">首页</a>
+      <a href="/services.html">服务</a>
+      <a href="/search.html">寻人</a>
+      <a href="/success-stories.html">成功案例</a>
+      <a href="/faq.html">常见问题</a>
+      <a href="/about.html">关于我们</a>
+      <a href="/contact.html">联系我们</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="page-header">
+      <h1>专业寻人服务</h1>
+      <p>我们提供全面的人员查找解决方案，帮助您重新联系失联的亲友、同学、同事。98%成功率，安全、合法、高效。</p>
+    </div>
+    
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="失联亲友寻找" class="service-image">
+        <div class="service-content">
+          <h3 class="service-title">失联亲友寻找</h3>
+          <p class="service-description">专业团队帮助您寻找失联多年的亲人，包括父母、子女、兄弟姐妹等血缘关系人员。</p>
+          <ul class="service-features">
+            <li>DNA比对技术支持</li>
+            <li>全国范围寻找网络</li>
+            <li>专业心理咨询辅导</li>
+            <li>团聚后续支持服务</li>
+          </ul>
+          <a href="/family-search.html" class="service-link">了解更多 →</a>
+        </div>
+      </div>
+      
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="同学老友重聚" class="service-image">
+        <div class="service-content">
+          <h3 class="service-title">同学老友重聚</h3>
+          <p class="service-description">帮助您找到失联的同学、朋友，重新建立联系，组织同学聚会或老友重聚。</p>
+          <ul class="service-features">
+            <li>校友网络资源对接</li>
+            <li>社交媒体深度搜索</li>
+            <li>聚会活动策划支持</li>
+            <li>群体寻找优惠方案</li>
+          </ul>
+          <a href="/classmate-search.html" class="service-link">了解更多 →</a>
+        </div>
+      </div>
+      
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="商务人员查找" class="service-image">
+        <div class="service-content">
+          <h3 class="service-title">商务人员查找</h3>
+          <p class="service-description">协助企业寻找前同事、合作伙伴或重要客户，为商务合作提供支持。</p>
+          <ul class="service-features">
+            <li>商业数据库检索</li>
+            <li>行业协会资源对接</li>
+            <li>商务社交网络分析</li>
+            <li>企业级隐私保障</li>
+          </ul>
+          <a href="/business-search.html" class="service-link">了解更多 →</a>
+        </div>
+      </div>
+      
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="法律相关寻人" class="service-image">
+        <div class="service-content">
+          <h3 class="service-title">法律相关寻人</h3>
+          <p class="service-description">为律师事务所、法院等机构提供合法的人员查找服务，协助法律程序进行。</p>
+          <ul class="service-features">
+            <li>法律程序合规保障</li>
+            <li>证人/当事人寻找</li>
+            <li>遗产继承相关寻人</li>
+            <li>法律文书送达支持</li>
+          </ul>
+          <a href="/legal-search.html" class="service-link">了解更多 →</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="process-section">
+      <h2 class="section-title">我们的服务流程</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h3 class="step-title">需求咨询</h3>
+          <p class="step-description">详细了解您的寻人需求，收集基本信息，评估案例难度和可行性。</p>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h3 class="step-title">方案制定</h3>
+          <p class="step-description">根据案例特点，制定个性化寻人方案，确定时间表和费用预算。</p>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h3 class="step-title">信息收集</h3>
+          <p class="step-description">深入收集与目标人员相关的所有信息，建立完整的信息档案。</p>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <h3 class="step-title">专业寻找</h3>
+          <p class="step-description">调动专业团队和资源网络，通过多种渠道和方法开展寻人工作。</p>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">5</div>
+          <h3 class="step-title">结果确认</h3>
+          <p class="step-description">确认寻找结果，验证身份信息，确保准确无误。</p>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">6</div>
+          <h3 class="step-title">联系建立</h3>
+          <p class="step-description">根据客户需求，协助建立联系，提供必要的心理和沟通支持。</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="methods-section">
+      <h2 class="section-title">我们的寻人方法</h2>
+      <div class="methods-grid">
+        <div class="method-card">
+          <div class="method-icon">📊</div>
+          <h3 class="method-title">大数据分析</h3>
+          <p>利用先进的大数据技术，分析海量信息，从中发现目标人员的活动轨迹和联系方式。</p>
+        </div>
+        
+        <div class="method-card">
+          <div class="method-icon">🔍</div>
+          <h3 class="method-title">实地调查</h3>
+          <p>专业调查人员前往目标人员可能出现的地点进行实地走访和调查，收集第一手信息。</p>
+        </div>
+        
+        <div class="method-card">
+          <div class="method-icon">🌐</div>
+          <h3 class="method-title">社交网络分析</h3>
+          <p>通过分析社交媒体和在线活动，追踪目标人员的社交足迹，发现潜在联系方式。</p>
+        </div>
+        
+        <div class="method-card">
+          <div class="method-icon">📰</div>
+          <h3 class="method-title">媒体协助寻人</h3>
+          <p>与媒体合作发布寻人信息，扩大寻人范围，提高社会关注度和寻找成功率。</p>
+        </div>
+        
+        <div class="method-card">
+          <div class="method-icon">🧬</div>
+          <h3 class="method-title">DNA比对技术</h3>
+          <p>针对亲属寻找，提供DNA比对服务，科学验证亲缘关系，确保寻亲结果准确无误。</p>
+        </div>
+        
+        <div class="method-card">
+          <div class="method-icon">📝</div>
+          <h3 class="method-title">公共记录查询</h3>
+          <p>查询各类公共记录，包括户籍、教育、就业、医疗等信息，追踪目标人员的生活轨迹。</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="stats-section">
+      <h2>我们的成绩</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number">5,000+</span>
+          <span class="stat-label">成功案例</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">98%</span>
+          <span class="stat-label">成功率</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">7天</span>
+          <span class="stat-label">平均用时</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">隐私保护</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cta-section">
+      <h2 class="cta-title">准备开始您的寻人之旅？</h2>
+      <p class="cta-description">填写寻人申请表，我们的专业顾问将在24小时内与您联系，为您提供个性化的寻人方案。</p>
+      <a href="/search.html" class="cta-button">立即开始寻人</a>
+    </div>
+    
+    <div class="faq-section">
+      <h2 class="section-title">常见问题</h2>
+      
+      <details class="faq-item">
+        <summary class="faq-question">寻人服务的成功率有多高？</summary>
+        <div class="faq-answer">
+          <p>我们的寻人服务成功率高达98%。通过专业的调查团队、先进的技术手段和广泛的资源网络，我们能够在大多数情况下成功找到目标人员。成功率会受到提供信息的完整度、失联时间长短、目标人员活动范围等因素的影响。</p>
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">寻人服务需要多长时间？</summary>
+        <div class="faq-answer">
+          <p>寻人时间因案例复杂度而异，一般标准服务需要15-30个工作日，快速服务7-14个工作日，加急服务3-7个工作日，特急服务24-72小时。具体时间会根据提供的信息完整度和案例难度进行评估。</p>
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">寻人服务的收费标准是什么？</summary>
+        <div class="faq-answer">
+          <p>我们的收费标准基于案例复杂度和服务级别，标准服务起价3,000元，快速服务起价4,500元，加急服务起价6,000元，特急服务起价9,000元。我们提供透明的定价和服务说明，确保客户了解每项费用的用途。详细价格请查看<a href="/pricing.html" style="color: var(--primary);">服务价格</a>页面。</p>
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">需要提供哪些信息才能开始寻人？</summary>
+        <div class="faq-answer">
+          <p>开始寻人服务需要提供：目标人员的基本信息（姓名、年龄、性别等）、最后已知地址或位置、联系方式、社交媒体账号（如有）、照片（如有）以及与目标人员的关系。信息越详细，寻人成功率越高。</p>
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">如果寻人不成功会退款吗？</summary>
+        <div class="faq-answer">
+          <p>我们提供有条件的退款保证。如果在约定时间内未能提供任何有效线索或进展，我们将根据服务条款提供部分退款。具体退款政策将在服务协议中详细说明。</p>
+        </div>
+      </details>
+    </div>
+  </div>
+  
+  <footer id="about">
+    <h3>关于寻人网</h3>
+    <p>寻人网成立于2020年，是一家专业的人员查找服务机构。我们拥有经验丰富的专业团队，</p>
+    <p>致力于为客户提供安全、合法、高效的寻人服务。</p>
+    <br>
+    <p>© 2025 寻人网 · <a href="/privacy.html">隐私政策</a> · <a href="/terms.html">使用条款</a> · <a href="/sitemap.xml">网站地图</a></p>
+  </footer>
+
+  <script src="/js/schema-markup.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/analytics.js"></script>
+  <script>
+    // FAQ交互
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        item.addEventListener('click', function() {
+          // 关闭其他打开的FAQ项
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.hasAttribute('open')) {
+              otherItem.removeAttribute('open');
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

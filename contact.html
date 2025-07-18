@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>联系我们 | 寻人网</title>
+  <meta name="description" content="联系寻人网，获取专业寻人服务咨询。我们提供多种联系方式，包括电话、邮件、在线表单和实时客服，随时为您提供帮助。">
+  <meta name="keywords" content="寻人网联系方式,寻人服务咨询,寻人网客服,寻人网地址,寻人网电话">
+  <link rel="canonical" href="https://www.findpeople.online/contact.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://www.findpeople.online/contact.html">
+  <link rel="alternate" hreflang="en" href="https://www.findpeople.online/contact-en.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/partials/site-style.css">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --primary: #3b82f6;
+      --primary-dark: #2563eb;
+      --text: #0f172a;
+      --muted: #6b7280;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    
+    header {
+      background: #fff;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,.05);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo a { 
+      font-size: 1.5rem; 
+      color: var(--primary); 
+      text-decoration: none;
+      font-weight: bold;
+    }
+    
+    .language-switcher {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    
+    .language-switcher a {
+      padding: 0.25rem 0.5rem;
+      text-decoration: none;
+      color: var(--muted);
+      border-radius: 0.25rem;
+    }
+    
+    .language-switcher a.active {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .nav-toggle { 
+      display: none; 
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    
+    .nav-toggle summary {
+      list-style: none;
+      font-size: 1.5rem;
+    }
+    
+    .nav-toggle summary::-webkit-details-marker {
+      display: none;
+    }
+    
+    .nav-toggle[open] nav {
+      animation: slideDown 0.3s ease-out forwards;
+    }
+    
+    .nav-toggle nav {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: white;
+      width: 200px;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+    
+    .page-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .page-header h1 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    
+    .page-header p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .contact-info {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    .contact-methods {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .contact-method {
+      display: flex;
+      align-items: flex-start;
+    }
+    
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(59, 130, 246, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      color: var(--primary);
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    
+    .contact-content {
+      flex: 1;
+    }
+    
+    .contact-label {
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+    
+    .contact-value {
+      color: var(--muted);
+    }
+    
+    .contact-value a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    .contact-value a:hover {
+      text-decoration: underline;
+    }
+    
+    .contact-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    .form-title {
+      font-size: 1.5rem;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid #e5e7eb;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      transition: border-color 0.2s ease;
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+    
+    .form-control:invalid:not(:placeholder-shown) {
+      border-color: #ef4444;
+    }
+    
+    .form-control:invalid:not(:placeholder-shown):focus {
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+    }
+    
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .submit-btn {
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+    
+    .submit-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+    
+    .map-section {
+      margin-bottom: 3rem;
+    }
+    
+    .map-container {
+      height: 400px;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    .office-section {
+      margin-bottom: 3rem;
+    }
+    
+    .office-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .office-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease;
+    }
+    
+    .office-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .office-city {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    
+    .office-address {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    
+    .office-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .office-phone, .office-email {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--muted);
+    }
+    
+    .office-phone a, .office-email a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    .office-phone a:hover, .office-email a:hover {
+      text-decoration: underline;
+    }
+    
+    .faq-section {
+      margin-bottom: 3rem;
+    }
+    
+    .faq-title {
+      font-size: 1.75rem;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .faq-item {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    .faq-question {
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+    
+    .faq-answer {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    
+    .social-section {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    
+    .social-title {
+      font-size: 1.75rem;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+    
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .social-icon {
+      width: 50px;
+      height: 50px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .social-icon:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    
+    .social-description {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .chat-section {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .chat-title {
+      font-size: 1.75rem;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    
+    .chat-description {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .chat-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .chat-button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      background: #fff;
+      margin-top: 3rem;
+    }
+    
+    footer a { 
+      color: var(--muted); 
+      text-decoration: none; 
+    }
+    
+    footer a:hover { 
+      color: var(--primary); 
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        padding: 1rem;
+      }
+      
+      .nav-toggle { 
+        display: block; 
+      }
+      
+      .desktop { 
+        display: none; 
+      }
+      
+      .container {
+        padding: 0 1rem;
+      }
+      
+      .page-header h1 {
+        font-size: 2rem;
+      }
+      
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .map-container {
+        height: 300px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .page-header h1 {
+        font-size: 1.75rem;
+      }
+      
+      .page-header p {
+        font-size: 1rem;
+      }
+      
+      .contact-info, .contact-form {
+        padding: 1.5rem;
+      }
+      
+      .form-title {
+        font-size: 1.35rem;
+      }
+      
+      .office-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .social-icons {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="/">寻人网</a></div>
+    <div class="language-switcher">
+      <a href="/contact.html" class="active" title="中文">中文</a>
+      <a href="/contact-en.html" title="English">EN</a>
+    </div>
+    <details class="nav-toggle">
+      <summary>☰</summary>
+      <nav>
+        <a href="/">首页</a>
+        <a href="/services.html">服务</a>
+        <a href="/search.html">寻人</a>
+        <a href="/success-stories.html">成功案例</a>
+        <a href="/faq.html">常见问题</a>
+        <a href="/about.html">关于我们</a>
+        <a href="/contact.html">联系我们</a>
+      </nav>
+    </details>
+    <nav class="desktop">
+      <a href="/">首页</a>
+      <a href="/services.html">服务</a>
+      <a href="/search.html">寻人</a>
+      <a href="/success-stories.html">成功案例</a>
+      <a href="/faq.html">常见问题</a>
+      <a href="/about.html">关于我们</a>
+      <a href="/contact.html">联系我们</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="page-header">
+      <h1>联系我们</h1>
+      <p>无论您有任何问题、建议或需求，我们都随时为您提供帮助。选择以下任一方式与我们联系。</p>
+    </div>
+    
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2 class="form-title">联系方式</h2>
+        <div class="contact-methods">
+          <div class="contact-method">
+            <div class="contact-icon">📞</div>
+            <div class="contact-content">
+              <div class="contact-label">客服热线</div>
+              <div class="contact-value"><a href="tel:400-123-4567">400-123-4567</a></div>
+              <div class="contact-value" style="margin-top: 0.25rem; font-size: 0.9rem;">周一至周五 9:00-18:00</div>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-content">
+              <div class="contact-label">电子邮箱</div>
+              <div class="contact-value"><a href="mailto:contact@findpeople.online">contact@findpeople.online</a></div>
+              <div class="contact-value" style="margin-top: 0.25rem; font-size: 0.9rem;">24小时内回复</div>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">📍</div>
+            <div class="contact-content">
+              <div class="contact-label">总部地址</div>
+              <div class="contact-value">北京市海淀区中关村大街1号</div>
+              <div class="contact-value" style="margin-top: 0.25rem; font-size: 0.9rem;">邮编: 100080</div>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">💬</div>
+            <div class="contact-content">
+              <div class="contact-label">在线客服</div>
+              <div class="contact-value"><a href="#chat">点击开始在线咨询</a></div>
+              <div class="contact-value" style="margin-top: 0.25rem; font-size: 0.9rem;">7x24小时服务</div>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">📱</div>
+            <div class="contact-content">
+              <div class="contact-label">微信公众号</div>
+              <div class="contact-value">寻人网官方</div>
+              <div class="contact-value" style="margin-top: 0.25rem; font-size: 0.9rem;">扫描下方二维码关注</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form">
+        <h2 class="form-title">留言咨询</h2>
+        <form action="https://formspree.io/f/yourFormID" method="POST">
+          <div class="form-group">
+            <label for="name">您的姓名 *</label>
+            <input type="text" id="name" name="name" class="form-control" required placeholder="请输入您的姓名">
+          </div>
+          
+          <div class="form-group">
+            <label for="email">电子邮箱 *</label>
+            <input type="email" id="email" name="email" class="form-control" required placeholder="请输入您的电子邮箱">
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">联系电话</label>
+            <input type="tel" id="phone" name="phone" class="form-control" placeholder="请输入您的联系电话">
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">咨询主题 *</label>
+            <select id="subject" name="subject" class="form-control" required>
+              <option value="">请选择咨询主题</option>
+              <option value="service">寻人服务咨询</option>
+              <option value="price">价格费用咨询</option>
+              <option value="cooperation">商务合作咨询</option>
+              <option value="feedback">意见反馈</option>
+              <option value="other">其他问题</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">留言内容 *</label>
+            <textarea id="message" name="message" class="form-control" required placeholder="请详细描述您的问题或需求，我们会尽快回复您"></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">提交留言</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="map-section">
+      <h2 class="form-title" style="margin-bottom: 1rem;">我们的位置</h2>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343008!2d-74.00425878428698!3d40.74076737932881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259bf5c1654f3%3A0xc80f9cfce5383d5d!2sGoogle!5e0!3m2!1sen!2sus!4v1586000412513!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+    
+    <div class="office-section">
+      <h2 class="form-title" style="margin-bottom: 1.5rem;">全国服务网点</h2>
+      <div class="office-grid">
+        <div class="office-card">
+          <div class="office-city">北京总部</div>
+          <div class="office-address">北京市海淀区中关村大街1号</div>
+          <div class="office-contact">
+            <div class="office-phone">
+              <span>📞</span>
+              <a href="tel:010-12345678">010-12345678</a>
+            </div>
+            <div class="office-email">
+              <span>✉️</span>
+              <a href="mailto:beijing@findpeople.online">beijing@findpeople.online</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="office-card">
+          <div class="office-city">上海分部</div>
+          <div class="office-address">上海市浦东新区陆家嘴环路1000号</div>
+          <div class="office-contact">
+            <div class="office-phone">
+              <span>📞</span>
+              <a href="tel:021-12345678">021-12345678</a>
+            </div>
+            <div class="office-email">
+              <span>✉️</span>
+              <a href="mailto:shanghai@findpeople.online">shanghai@findpeople.online</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="office-card">
+          <div class="office-city">广州分部</div>
+          <div class="office-address">广州市天河区珠江新城冼村路21号</div>
+          <div class="office-contact">
+            <div class="office-phone">
+              <span>📞</span>
+              <a href="tel:020-12345678">020-12345678</a>
+            </div>
+            <div class="office-email">
+              <span>✉️</span>
+              <a href="mailto:guangzhou@findpeople.online">guangzhou@findpeople.online</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="office-card">
+          <div class="office-city">深圳分部</div>
+          <div class="office-address">深圳市南山区科技园南区高新南一道2号</div>
+          <div class="office-contact">
+            <div class="office-phone">
+              <span>📞</span>
+              <a href="tel:0755-12345678">0755-12345678</a>
+            </div>
+            <div class="office-email">
+              <span>✉️</span>
+              <a href="mailto:shenzhen@findpeople.online">shenzhen@findpeople.online</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="faq-section">
+      <h2 class="faq-title">常见联系问题</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-question">如何预约面谈咨询？</div>
+          <div class="faq-answer">您可以通过客服热线400-123-4567或在线表单预约面谈咨询。我们的客服人员会在24小时内与您联系，安排合适的时间和地点。</div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">紧急情况如何联系？</div>
+          <div class="faq-answer">对于紧急情况，请直接拨打我们的紧急热线：400-123-4567转9，我们有专门的团队24小时待命，为您提供紧急支持。</div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">如何投诉或提出建议？</div>
+          <div class="faq-answer">您可以通过电子邮箱feedback@findpeople.online提交投诉或建议，我们的客户体验团队会认真处理每一条反馈，并在3个工作日内回复。</div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">如何申请成为合作伙伴？</div>
+          <div class="faq-answer">如果您希望与我们建立合作关系，请发送合作意向至partnership@findpeople.online，包括您的机构信息和合作方向，我们的商务团队会与您联系。</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="social-section">
+      <h2 class="social-title">关注我们</h2>
+      <div class="social-icons">
+        <a href="#" class="social-icon" title="微信公众号">
+          <span>微信</span>
+        </a>
+        <a href="#" class="social-icon" title="微博">
+          <span>微博</span>
+        </a>
+        <a href="#" class="social-icon" title="抖音">
+          <span>抖音</span>
+        </a>
+        <a href="#" class="social-icon" title="知乎">
+          <span>知乎</span>
+        </a>
+      </div>
+      <p class="social-description">关注我们的社交媒体账号，获取最新的寻人技巧、成功案例和行业动态。</p>
+    </div>
+    
+    <div class="chat-section" id="chat">
+      <h2 class="chat-title">在线客服</h2>
+      <p class="chat-description">我们的在线客服7x24小时为您提供帮助，无论您有任何问题，都可以随时咨询。</p>
+      <a href="#" class="chat-button">
+        <span>💬</span>
+        <span>开始在线咨询</span>
+      </a>
+    </div>
+  </div>
+  
+  <footer>
+    <h3>关于寻人网</h3>
+    <p>寻人网成立于2020年，是一家专业的人员查找服务机构。我们拥有经验丰富的专业团队，</p>
+    <p>致力于为客户提供安全、合法、高效的寻人服务。</p>
+    <br>
+    <p>© 2025 寻人网 · <a href="/privacy.html">隐私政策</a> · <a href="/terms.html">使用条款</a> · <a href="/sitemap.xml">网站地图</a></p>
+  </footer>
+
+  <script src="/js/schema-markup.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/analytics.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 表单验证
+      const form = document.querySelector('.contact-form form');
+      const inputs = form.querySelectorAll('input, textarea, select');
+      
+      form.addEventListener('submit', function(e) {
+        let valid = true;
+        
+        inputs.forEach(input => {
+          if (input.hasAttribute('required') && !input.value.trim()) {
+            valid = false;
+            input.classList.add('error');
+          } else {
+            input.classList.remove('error');
+          }
+          
+          if (input.type === 'email' && input.value.trim()) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(input.value.trim())) {
+              valid = false;
+              input.classList.add('error');
+            }
+          }
+        });
+        
+        if (!valid) {
+          e.preventDefault();
+          alert('请填写所有必填字段，并确保信息格式正确。');
+        }
+      });
+      
+      inputs.forEach(input => {
+        input.addEventListener('input', function() {
+          if (this.classList.contains('error')) {
+            if (this.value.trim()) {
+              this.classList.remove('error');
+            }
+          }
+        });
+      });
+      
+      // 在线客服按钮
+      const chatButton = document.querySelector('.chat-button');
+      
+      chatButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('在线客服系统正在加载中，请稍候...');
+        // 这里可以添加实际的在线客服系统集成代码
+      });
+    });
+  </script>
+</body>
+</html>
