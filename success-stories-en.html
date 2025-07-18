@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Success Stories | FindPeople</title>
+  <meta name="description" content="View real success stories from FindPeople, learn how we help families reunite and friends reconnect.">
+  <link rel="stylesheet" href="/partials/site-style.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --primary: #3b82f6;
+      --text: #0f172a;
+      --muted: #6b7280;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    
+    .story-card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,.1);
+      margin-bottom: 2rem;
+      border-left: 4px solid var(--primary);
+    }
+    
+    .story-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    
+    .story-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    
+    .story-date {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    
+    .story-content {
+      line-height: 1.7;
+      color: var(--text);
+    }
+    
+    .story-result {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+      font-weight: 500;
+      color: #0369a1;
+    }
+    
+    .stats-section {
+      background: linear-gradient(135deg, var(--primary), #60a5fa);
+      color: #fff;
+      padding: 3rem 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .stat-item {
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      display: block;
+    }
+    
+    .stat-label {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    /* New styles */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      background: white;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    }
+
+    .filter-item {
+      display: flex;
+      align-items: center;
+    }
+
+    .filter-label {
+      margin-right: 0.5rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .filter-select {
+      padding: 0.5rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5rem;
+      background: white;
+      color: var(--text);
+    }
+
+    .story-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .story-tag {
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+    }
+
+    .story-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .story-quote {
+      font-style: italic;
+      border-left: 3px solid var(--primary);
+      padding-left: 1rem;
+      margin: 1rem 0;
+      color: var(--text-light);
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .page-item {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.5rem;
+      background: white;
+      border: 1px solid #e5e7eb;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .page-item:hover {
+      background: #f3f4f6;
+    }
+
+    .page-item.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .testimonials-section {
+      margin: 3rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--primary);
+    }
+
+    .featured-story {
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,.1);
+      margin-bottom: 3rem;
+    }
+
+    .featured-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .featured-content {
+      padding: 2rem;
+    }
+
+    .featured-title {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .featured-badge {
+      background: #fef3c7;
+      color: #92400e;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .filter-bar {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .featured-image {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="/index-en.html">FindPeople</a></div>
+    <div class="language-switcher">
+      <a href="/success-stories.html" title="中文">中文</a>
+      <a href="/success-stories-en.html" class="active" title="English">EN</a>
+    </div>
+    <details class="nav-toggle">
+      <summary>☰</summary>
+      <nav>
+        <a href="/index-en.html">Home</a>
+        <a href="/index-en.html#services">Services</a>
+        <a href="/search-en.html">Search</a>
+        <a href="/success-stories-en.html">Success Stories</a>
+        <a href="/index-en.html#about">About</a>
+      </nav>
+    </details>
+    <nav class="desktop">
+      <a href="/index-en.html">Home</a>
+      <a href="/index-en.html#services">Services</a>
+      <a href="/search-en.html">Search</a>
+      <a href="/success-stories-en.html">Success Stories</a>
+      <a href="/index-en.html#about">About</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1 style="text-align: center; margin-bottom: 1rem; color: var(--primary);">Success Stories</h1>
+    <p style="text-align: center; color: var(--muted); margin-bottom: 3rem;">Real people search success stories, witnessing the joy of every reunion</p>
+    
+    <div class="featured-story">
+      <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Family reunion" class="featured-image">
+      <div class="featured-content">
+        <span class="featured-badge">Special Case</span>
+        <h2 class="featured-title">A 30-Year Journey: A Family's Reunion Story</h2>
+        <div class="story-content">
+          <p>In 1990, Mrs. Li was separated from her 5-year-old son due to an accident. For 30 years, she never gave up searching, but with limited information technology at the time, there was no progress. In early 2024, with one last hope, Mrs. Li contacted FindPeople.</p>
+          <p>Our professional team analyzed historical archives, social networks, and DNA databases, eventually finding her son in Henan Province. After DNA confirmation, the mother-son relationship was verified.</p>
+          <div class="story-quote">
+            "For 30 years, I thought about him every day, dreaming of seeing him again. Thanks to FindPeople, I finally got to experience this day." — Mrs. Li
+          </div>
+          <p>This reunion not only changed the lives of Mrs. Li and her son but also made us deeply appreciate the meaning of our work. No matter how long it takes, we will do our utmost to help every family reunite.</p>
+        </div>
+        <div class="story-result">
+          ✅ Successfully found: 21 days, reunited after 30 years
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <div class="filter-item">
+        <span class="filter-label">Case Type:</span>
+        <select class="filter-select" id="type-filter">
+          <option value="all">All</option>
+          <option value="family">Family Search</option>
+          <option value="classmate">Classmate Search</option>
+          <option value="friend">Friend Search</option>
+          <option value="business">Business Contact</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="filter-item">
+        <span class="filter-label">Time:</span>
+        <select class="filter-select" id="time-filter">
+          <option value="all">All</option>
+          <option value="month">Last Month</option>
+          <option value="quarter">Last 3 Months</option>
+          <option value="year">Last Year</option>
+        </select>
+      </div>
+      <div class="filter-item">
+        <span class="filter-label">Sort By:</span>
+        <select class="filter-select" id="sort-filter">
+          <option value="newest">Newest</option>
+          <option value="oldest">Oldest</option>
+          <option value="duration">Shortest Duration</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="story-card">
+      <div class="story-header">
+        <div class="story-title">Mother-Son Reunion: Together After 30 Years</div>
+        <div class="story-date">December 2024</div>
+      </div>
+      <div class="story-content">
+        <p>Mrs. Li was separated from her son for 30 years due to historical reasons and never gave up hope of finding him. Through our professional team, using various legal channels and modern technology, we finally found her son in Henan Province.</p>
+        <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Mother-son reunion" class="story-image">
+        <p>When mother and son reunited, both were moved to tears. Mrs. Li said: "I've waited 30 years for this day."</p>
+        <div class="story-tags">
+          <span class="story-tag">Family Search</span>
+          <span class="story-tag">Cross-Province</span>
+          <span class="story-tag">Long Separation</span>
+        </div>
+      </div>
+      <div class="story-result">
+        ✅ Successfully found: 15 days, mother-son reunion
+      </div>
+    </div>
+    
+    <div class="story-card">
+      <div class="story-header">
+        <div class="story-title">Class Reunion: Finding Classmates After 20 Years</div>
+        <div class="story-date">November 2024</div>
+      </div>
+      <div class="story-content">
+        <p>Mr. Zhang wanted to organize a high school reunion, but several classmates had lost contact for many years. We helped him find 3 of these classmates, including the former class monitor, Mr. Wang.</p>
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Class reunion" class="story-image">
+        <p>Through social network analysis and public information queries, we successfully contacted these old classmates. On the day of the reunion, everyone was very excited, as if they had returned to their youth.</p>
+        <div class="story-tags">
+          <span class="story-tag">Classmate Search</span>
+          <span class="story-tag">Reunion Organization</span>
+          <span class="story-tag">Multiple People</span>
+        </div>
+      </div>
+      <div class="story-result">
+        ✅ Successfully found: 3 classmates, reunion successfully held
+      </div>
+    </div>
+    
+    <div class="story-card">
+      <div class="story-header">
+        <div class="story-title">Business Cooperation: Finding Important Client</div>
+        <div class="story-date">October 2024</div>
+      </div>
+      <div class="story-content">
+        <p>An important client of a company changed their contact information, causing an important project to stall. The company commissioned us to find the client's new contact details.</p>
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Business cooperation" class="story-image">
+        <p>Through business information queries and commercial network analysis, we successfully found the client's new company and contact information, helping both parties re-establish contact.</p>
+        <div class="story-tags">
+          <span class="story-tag">Business Search</span>
+          <span class="story-tag">Urgent Case</span>
+          <span class="story-tag">Efficiently Completed</span>
+        </div>
+      </div>
+      <div class="story-result">
+        ✅ Successfully found: Business contact re-established, project proceeded smoothly
+      </div>
+    </div>
+    
+    <div class="story-card">
+      <div class="story-header">
+        <div class="story-title">Finding a Lifesaver: Repaying a Life-Saving Kindness</div>
+        <div class="story-date">September 2024</div>
+      </div>
+      <div class="story-content">
+        <p>Mr. Chen was in a car accident 10 years ago and was rescued and taken to the hospital by a kind stranger. Due to the emergency at the time, no contact information was exchanged. After recovery, Mr. Chen always wanted to find this benefactor to express his gratitude.</p>
+        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Finding a lifesaver" class="story-image">
+        <p>Through hospital records, traffic police department information, and other channels, we finally found this good Samaritan. Both were very moved when they met.</p>
+        <div class="story-tags">
+          <span class="story-tag">Benefactor Search</span>
+          <span class="story-tag">Special Case</span>
+          <span class="story-tag">Limited Information</span>
+        </div>
+      </div>
+      <div class="story-result">
+        ✅ Successfully found: Benefactor meeting, deeply moving
+      </div>
+    </div>
+    
+    <div class="pagination">
+      <div class="page-item active">1</div>
+      <div class="page-item">2</div>
+      <div class="page-item">3</div>
+      <div class="page-item">4</div>
+      <div class="page-item">5</div>
+      <div class="page-item">...</div>
+      <div class="page-item">10</div>
+    </div>
+    
+    <div class="testimonials-section">
+      <h2 class="section-title">Client Testimonials</h2>
+      <div id="testimonials-carousel"></div>
+    </div>
+    
+    <div class="stats-section">
+      <h2>Our Achievements</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number">5,000+</span>
+          <span class="stat-label">Success Cases</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">98%</span>
+          <span class="stat-label">Success Rate</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">7 Days</span>
+          <span class="stat-label">Average Time</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Privacy Protection</span>
+        </div>
+      </div>
+    </div>
+    
+    <div style="text-align: center; margin: 3rem 0;">
+      <h3 style="color: var(--text); margin-bottom: 1rem;">Do you also need people search services?</h3>
+      <a href="/search-en.html" style="background: var(--primary); color: #fff; padding: 1rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600;">Start Your Search Now</a>
+    </div>
+    
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="/index-en.html" style="color: var(--primary); text-decoration: none;">← Back to Home</a>
+    </div>
+  </div>
+  
+  <footer id="about">
+    <h3>About FindPeople</h3>
+    <p>FindPeople was established in 2020 as a professional people search service organization. We have an experienced professional team</p>
+    <p>dedicated to providing safe, legal, and efficient people search services for our clients.</p>
+    <br>
+    <p>© 2025 FindPeople · <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Service</a> · <a href="/sitemap.xml">Sitemap</a></p>
+  </footer>
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8231924120348302" crossorigin="anonymous"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/testimonials.js"></script>
+  <script src="/js/analytics.js"></script>
+  <script src="/js/chat-support.js"></script>
+  <script>
+    // Case filtering functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const typeFilter = document.getElementById('type-filter');
+      const timeFilter = document.getElementById('time-filter');
+      const sortFilter = document.getElementById('sort-filter');
+      const storyCards = document.querySelectorAll('.story-card');
+      
+      function applyFilters() {
+        const typeValue = typeFilter.value;
+        const timeValue = timeFilter.value;
+        const sortValue = sortFilter.value;
+        
+        // Here you can implement actual filtering logic
+        console.log(`Filter conditions: Type=${typeValue}, Time=${timeValue}, Sort=${sortValue}`);
+        
+        // Simulate filtering effect
+        storyCards.forEach(card => {
+          // Randomly show/hide cards to simulate filtering effect
+          if (Math.random() > 0.3) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+      
+      typeFilter.addEventListener('change', applyFilters);
+      timeFilter.addEventListener('change', applyFilters);
+      sortFilter.addEventListener('change', applyFilters);
+      
+      // Pagination functionality
+      const pageItems = document.querySelectorAll('.page-item');
+      pageItems.forEach(item => {
+        item.addEventListener('click', function() {
+          pageItems.forEach(p => p.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Simulate page switching
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
