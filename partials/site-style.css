@@ -469,7 +469,12 @@ body {
 img {
   max-width: 100%;
   height: auto;
-  loading: lazy;
+}
+
+/* 使用loading属性实现懒加载 */
+img:not([loading]) {
+  /* HTML属性，不是CSS属性 */
+  /* loading: "lazy"; */
 }
 
 img[data-src] {
