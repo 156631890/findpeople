@@ -51,7 +51,8 @@ class TestimonialsCarousel {
         rating: 5,
         text: '感谢寻人网帮我找到了失联多年的女儿。专业团队、高效服务，让我们一家人终于团聚。这种幸福的感觉无法用言语表达，真心感谢！',
         date: '2024-12-15',
-        caseType: '亲人寻找'
+        caseType: '亲人寻找',
+        membershipLevel: '高级会员'
       },
       {
         id: 2,
@@ -61,7 +62,8 @@ class TestimonialsCarousel {
         rating: 5,
         text: '通过寻人网成功组织了20年同学聚会，找到了所有失联的同学。服务非常专业，效率很高，价格也合理。强烈推荐！',
         date: '2024-11-20',
-        caseType: '同学寻找'
+        caseType: '同学寻找',
+        membershipLevel: '标准会员'
       },
       {
         id: 3,
@@ -71,7 +73,8 @@ class TestimonialsCarousel {
         rating: 4,
         text: '帮我找到了10年前的恩人，终于有机会当面表达感谢。虽然过程比预期长了一些，但结果非常满意。服务态度很好，会持续跟进。',
         date: '2024-10-05',
-        caseType: '恩人寻找'
+        caseType: '恩人寻找',
+        membershipLevel: '标准会员'
       },
       {
         id: 4,
@@ -81,7 +84,8 @@ class TestimonialsCarousel {
         rating: 5,
         text: '寻人网的专业程度超出预期，不到一周就帮我找到了失联的父亲。整个过程透明，随时了解进展。这是我做过最正确的决定！',
         date: '2024-09-18',
-        caseType: '亲人寻找'
+        caseType: '亲人寻找',
+        membershipLevel: '尊享会员'
       },
       {
         id: 5,
@@ -91,7 +95,8 @@ class TestimonialsCarousel {
         rating: 5,
         text: '作为企业负责人，我们通过寻人网找到了重要客户的新联系方式，成功挽回了一个大项目。服务专业高效，值得信赖的商务伙伴。',
         date: '2024-08-22',
-        caseType: '商务寻人'
+        caseType: '商务寻人',
+        membershipLevel: '尊享会员'
       }
     ];
   }
@@ -131,6 +136,7 @@ class TestimonialsCarousel {
                 ${this.generateRatingStars(testimonial.rating)}
               </div>
             </div>
+            ${testimonial.membershipLevel ? `<div class="membership-badge ${testimonial.membershipLevel.replace(/\s+/g, '-').toLowerCase()}">${testimonial.membershipLevel}</div>` : ''}
           </div>
           <div class="testimonial-body">
             <p class="testimonial-text">${testimonial.text}</p>
@@ -383,12 +389,14 @@ function addTestimonialStyles() {
       height: 100%;
       display: flex;
       flex-direction: column;
+      position: relative;
     }
     
     .testimonial-header {
       display: flex;
       align-items: center;
       margin-bottom: 15px;
+      position: relative;
     }
     
     .testimonial-avatar {
@@ -521,6 +529,29 @@ function addTestimonialStyles() {
     .carousel-indicator.active {
       background: #3b82f6;
       transform: scale(1.2);
+    }
+    
+    .membership-badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      color: white;
+    }
+    
+    .membership-badge.标准-会员 {
+      background-color: #60a5fa;
+    }
+    
+    .membership-badge.高级-会员 {
+      background-color: #8b5cf6;
+    }
+    
+    .membership-badge.尊享-会员 {
+      background-color: #f59e0b;
     }
     
     @media (max-width: 768px) {
