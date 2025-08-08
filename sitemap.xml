@@ -1,83 +1,173 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <!-- 中文主页 -->
   <url>
-    <loc>https://www.findpeople.com/</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://www.findpeople.online/</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.findpeople.com/index-en.html"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.findpeople.com/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.findpeople.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.findpeople.online/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.findpeople.online/index-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.findpeople.online/" />
   </url>
   
   <!-- 英文主页 -->
   <url>
-    <loc>https://www.findpeople.com/index-en.html</loc>
-    <lastmod>2025-01-16</lastmod>
+    <loc>https://www.findpeople.online/index-en.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.findpeople.online/index-en.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.findpeople.online/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.findpeople.online/" />
+  </url>
+
+  <!-- 寻人服务页面 -->
+  <url>
+    <loc>https://www.findpeople.online/search.html</loc>
+    <lastmod>2025-01-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.findpeople.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.findpeople.com/index-en.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.findpeople.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.findpeople.online/search.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.findpeople.online/search-en.html" />
   </url>
   
-  <!-- 中文搜索页 -->
   <url>
-    <loc>https://www.findpeople.com/search.html</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.findpeople.online/search-en.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.findpeople.com/search-en.html"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.findpeople.com/search.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.findpeople.online/search-en.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.findpeople.online/search.html" />
   </url>
-  
-  <!-- 英文搜索页 -->
+
+  <!-- 成功案例页面 -->
   <url>
-    <loc>https://www.findpeople.com/search-en.html</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.findpeople.online/success-stories.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.findpeople.com/search.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.findpeople.com/search-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.findpeople.online/success-stories.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.findpeople.online/success-stories-en.html" />
   </url>
   
-  <!-- 中文成功案例 -->
   <url>
-    <loc>https://www.findpeople.com/success-stories.html</loc>
-    <lastmod>2025-01-16</lastmod>
+    <loc>https://www.findpeople.online/success.stories.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.findpeople.online/success-stories-en.html</loc>
+    <lastmod>2025-01-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.findpeople.com/success-stories-en.html"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.findpeople.com/success-stories.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.findpeople.online/success-stories-en.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.findpeople.online/success-stories.html" />
   </url>
-  
-  <!-- 英文成功案例 -->
+
+  <!-- 服务介绍页面 -->
   <url>
-    <loc>https://www.findpeople.com/success-stories-en.html</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.findpeople.com/success-stories.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.findpeople.com/success-stories-en.html"/>
+    <loc>https://www.findpeople.online/services.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
-  
+
+  <!-- 价格页面 -->
+  <url>
+    <loc>https://www.findpeople.online/pricing.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 关于我们 -->
+  <url>
+    <loc>https://www.findpeople.online/about.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 联系我们 -->
+  <url>
+    <loc>https://www.findpeople.online/contact.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 常见问题 -->
+  <url>
+    <loc>https://www.findpeople.online/faq.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- 隐私政策 -->
   <url>
-    <loc>https://www.findpeople.com/privacy.html</loc>
-    <lastmod>2025-01-16</lastmod>
+    <loc>https://www.findpeople.online/privacy.html</loc>
+    <lastmod>2025-01-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-  
+
   <!-- 使用条款 -->
   <url>
-    <loc>https://www.findpeople.com/terms.html</loc>
-    <lastmod>2025-01-16</lastmod>
+    <loc>https://www.findpeople.online/terms.html</loc>
+    <lastmod>2025-01-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-  
+
+  <!-- 博客首页 -->
+  <url>
+    <loc>https://www.findpeople.online/blog/</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 博客文章 -->
+  <url>
+    <loc>https://www.findpeople.online/blog/how-to-find-lost-relatives.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.findpeople.online/blog/professional-people-search-guide.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 管理后台 -->
+  <url>
+    <loc>https://www.findpeople.online/admin/</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.1</priority>
+  </url>
+
+  <!-- 验证文件 -->
+  <url>
+    <loc>https://www.findpeople.online/google-verification.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.1</priority>
+  </url>
+
+  <url>
+    <loc>https://www.findpeople.online/baidu_verify_code.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.1</priority>
+  </url>
+
 </urlset>

@@ -1,1 +1,21 @@
+# ads.txt file for findpeople.online
+# This file is used to authorize digital advertising sellers
+
+# Google AdSense
 google.com, pub-8231924120348302, DIRECT, f08c47fec0942fa0
+
+# 其他广告网络可以在这里添加
+# 格式: <Field #1>, <Field #2>, <Field #3>, <Field #4>
+# Field #1: 广告系统域名
+# Field #2: 发布商账户ID  
+# Field #3: 账户类型 (DIRECT 或 RESELLER)
+# Field #4: 认证机构ID (可选)
+
+# 示例其他广告网络
+# doubleclick.net, 123456789, DIRECT, f08c47fec0942fa0
+# media.net, 8CU123456, DIRECT
+# amazon-adsystem.com, 1234-5678-9012, DIRECT
+
+# 联系信息
+# contact=admin@findpeople.online
+# subdomain=www
