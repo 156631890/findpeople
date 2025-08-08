@@ -71,11 +71,6 @@
           </a>
         </div>
         
-        <div class="language-switcher">
-          <a href="/success.stories.html" class="active" title="中文版">中文</a>
-          <a href="/success-stories-en.html" title="English Version">EN</a>
-        </div>
-        
         <nav class="main-nav">
           <ul>
             <li><a href="/" title="寻人网首页">首页</a></li>
@@ -89,10 +84,17 @@
           </ul>
         </nav>
         
-        <div class="mobile-menu-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class="header-right">
+          <div class="language-switcher">
+            <a href="/success.stories.html" class="active" title="中文版">中文</a>
+            <a href="/success-stories-en.html" title="English Version">EN</a>
+          </div>
+          
+          <div class="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </div>
     </div>
@@ -629,10 +631,11 @@ style>
     }
 
     .header-content {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      justify-content: space-between;
       padding: 1rem 0;
+      gap: 2rem;
     }
 
     .logo a {
@@ -643,6 +646,10 @@ style>
       color: var(--primary);
       font-weight: bold;
       font-size: 1.5rem;
+    }
+
+    .main-nav {
+      justify-self: center;
     }
 
     .main-nav ul {
@@ -663,6 +670,13 @@ style>
     .main-nav a:hover,
     .main-nav a.active {
       color: var(--primary);
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-self: end;
     }
 
     .language-switcher {
@@ -1394,12 +1408,21 @@ style>
 
     /* 响应式设计 */
     @media (max-width: 768px) {
+      .header-content {
+        grid-template-columns: 1fr auto;
+        gap: 1rem;
+      }
+
       .main-nav {
         display: none;
       }
 
       .mobile-menu-toggle {
         display: flex;
+      }
+
+      .header-right {
+        gap: 0.5rem;
       }
 
       .page-hero h1 {
