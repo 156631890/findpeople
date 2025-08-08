@@ -15,8 +15,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/partials/site-style.css">
-  <link rel="stylesheet" href="/partials/advanced-styles.css">
+  <link rel="stylesheet" href="/partials/site-style.css?v=20250108">
+  <link rel="stylesheet" href="/partials/advanced-styles.css?v=20250108">
 
   <style>
     :root {
@@ -2086,10 +2086,23 @@
       });
     });
   </script>
-  <script src="/js/advanced-features.js"></script>
-  <script src="/js/schema-markup.js"></script>
-  <script src="/js/main.js"></script>
-  <script src="/api/integration.js"></script>
-  <script src="/js/analytics.js"></script>
+  <script src="/js/advanced-features.js?v=20250108"></script>
+  <script src="/js/schema-markup.js?v=20250108"></script>
+  <script src="/js/main.js?v=20250108"></script>
+  <script src="/api/integration.js?v=20250108"></script>
+  <script src="/js/analytics.js?v=20250108"></script>
+  
+  <!-- 版本检查脚本 -->
+  <script>
+    // 版本检查和缓存破坏
+    console.log('寻人网 AI智能平台 v2.0.0 - 部署时间: 2025-01-08');
+    
+    // 检查是否为新版本
+    if (document.querySelector('.hero-highlight')) {
+      console.log('✅ 新版本已加载');
+    } else {
+      console.log('⚠️ 可能加载了旧版本，请强制刷新');
+    }
+  </script>
 </body>
 </html>

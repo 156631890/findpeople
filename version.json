@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "build": "20250108-ai-upgrade",
+  "timestamp": "2025-01-08T12:00:00Z",
+  "description": "AI智能寻人平台升级版本",
+  "features": [
+    "AI技术展示",
+    "智能搜索系统", 
+    "实时在线客服",
+    "成功案例展示",
+    "高级交互效果",
+    "SEO优化增强"
+  ],
+  "deployment": {
+    "status": "active",
+    "environment": "production",
+    "domains": [
+      "findpeople.online",
+      "findpeople-8wtd-stevens-projects-08c9c5b0.vercel.app"
+    ]
+  }
+}

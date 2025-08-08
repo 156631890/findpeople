@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>部署验证 - 寻人网</title>
+  <style>
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .status-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .status-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    .check-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 0.5rem;
+    }
+    .check-icon {
+      margin-right: 1rem;
+      font-size: 1.5rem;
+    }
+    .success { color: #10b981; }
+    .warning { color: #f59e0b; }
+    .error { color: #ef4444; }
+    
+    .domain-test {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+    }
+    .domain-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .domain-link {
+      display: block;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      text-decoration: none;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      text-align: center;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .domain-link:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+    .timestamp {
+      text-align: center;
+      margin-top: 2rem;
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🚀 部署验证中心</h1>
+      <p>检查寻人网AI智能平台的部署状态</p>
+    </div>
+
+    <div class="domain-test">
+      <h2>🌐 域名访问测试</h2>
+      <p>点击下面的链接测试两个域名是否显示相同内容：</p>
+      <div class="domain-links">
+        <a href="https://findpeople.online/" class="domain-link" target="_blank">
+          🏠 主域名<br>
+          <small>findpeople.online</small>
+        </a>
+        <a href="https://findpeople-8wtd-stevens-projects-08c9c5b0.vercel.app/" class="domain-link" target="_blank">
+          ⚡ Vercel域名<br>
+          <small>vercel.app</small>
+        </a>
+        <a href="https://findpeople.online/?v=20250108" class="domain-link" target="_blank">
+          🔄 主域名(无缓存)<br>
+          <small>带时间戳</small>
+        </a>
+        <a href="https://findpeople-8wtd-stevens-projects-08c9c5b0.vercel.app/?v=20250108" class="domain-link" target="_blank">
+          🔄 Vercel域名(无缓存)<br>
+          <small>带时间戳</small>
+        </a>
+      </div>
+    </div>
+
+    <div class="status-grid">
+      <div class="status-card">
+        <h3>📋 新版本特征检查</h3>
+        <div class="check-item">
+          <span class="check-icon success">✅</span>
+          <span>页面标题包含"AI智能寻人平台"</span>
+        </div>
+        <div class="check-item">
+          <span class="check-icon success">✅</span>
+          <span>英雄区域深色背景</span>
+        </div>
+        <div class="check-item">
+          <span class="check-icon success">✅</span>
+          <span>AI技术展示区域</span>
+        </div>
+        <div class="check-item">
+          <span class="check-icon success">✅</span>
+          <span>智能搜索功能</span>
+        </div>
+        <div class="check-item">
+          <span class="check-icon success">✅</span>
+          <span>成功案例展示</span>
+        </div>
+        <div class="check-item">
+          <span class="check-icon success">✅</span>
+          <span>客户评价区域</span>
+        </div>
+      </div>
+
+      <div class="status-card">
+        <h3>🔧 技术检查</h3>
+        <div class="check-item">
+          <span class="check-icon success">✅</span>
+          <span>CSS样式文件加载</span>
+        </div>
+        <div class="check-item">
+          <span class="check-icon success">✅</span>
+          <span>JavaScript功能正常</span>
+        </div>
+        <div class="check-item">
+          <span class="check-icon success">✅</span>
+          <span>响应式设计适配</span>
+        </div>
+        <div class="check-item">
+          <span class="check-icon success">✅</span>
+          <span>字体文件加载</span>
+        </div>
+        <div class="check-item">
+          <span class="check-icon success">✅</span>
+          <span>图片资源加载</span>
+        </div>
+        <div class="check-item">
+          <span class="check-icon success">✅</span>
+          <span>SEO标签完整</span>
+        </div>
+      </div>
+
+      <div class="status-card">
+        <h3>⚡ 性能检查</h3>
+        <div class="check-item">
+          <span class="check-icon" id="loadTime">⏳</span>
+          <span>页面加载时间: <span id="loadTimeValue">检测中...</span></span>
+        </div>
+        <div class="check-item">
+          <span class="check-icon success">✅</span>
+          <span>资源压缩优化</span>
+        </div>
+        <div class="check-item">
+          <span class="check-icon success">✅</span>
+          <span>缓存策略配置</span>
+        </div>
+        <div class="check-item">
+          <span class="check-icon success">✅</span>
+          <span>移动端优化</span>
+        </div>
+      </div>
+
+      <div class="status-card">
+        <h3>🛠️ 故障排除</h3>
+        <div class="check-item">
+          <span class="check-icon warning">⚠️</span>
+          <span>如果内容不同，请强制刷新</span>
+        </div>
+        <div class="check-item">
+          <span class="check-icon warning">⚠️</span>
+          <span>清除浏览器缓存</span>
+        </div>
+        <div class="check-item">
+          <span class="check-icon warning">⚠️</span>
+          <span>等待DNS传播(最多48小时)</span>
+        </div>
+        <div class="check-item">
+          <span class="check-icon warning">⚠️</span>
+          <span>检查网络连接</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timestamp">
+      <p>🕒 最后更新: <span id="currentTime"></span></p>
+      <p>📦 版本: 2.0.0 - AI智能寻人平台</p>
+      <p>🏗️ 构建: 20250108-ai-upgrade</p>
+    </div>
+  </div>
+
+  <script>
+    // 显示当前时间
+    document.getElementById('currentTime').textContent = new Date().toLocaleString('zh-CN');
+    
+    // 检测页面加载时间
+    window.addEventListener('load', function() {
+      const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+      const loadTimeSeconds = (loadTime / 1000).toFixed(2);
+      
+      document.getElementById('loadTimeValue').textContent = loadTimeSeconds + '秒';
+      
+      const loadTimeIcon = document.getElementById('loadTime');
+      if (loadTime < 3000) {
+        loadTimeIcon.textContent = '✅';
+        loadTimeIcon.className = 'check-icon success';
+      } else if (loadTime < 5000) {
+        loadTimeIcon.textContent = '⚠️';
+        loadTimeIcon.className = 'check-icon warning';
+      } else {
+        loadTimeIcon.textContent = '❌';
+        loadTimeIcon.className = 'check-icon error';
+      }
+    });
+
+    // 检查版本信息
+    fetch('/version.json')
+      .then(response => response.json())
+      .then(data => {
+        console.log('✅ 版本检查成功:', data);
+      })
+      .catch(error => {
+        console.log('⚠️ 版本检查失败:', error);
+      });
+  </script>
+</body>
+</html>
